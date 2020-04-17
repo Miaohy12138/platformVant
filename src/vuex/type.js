@@ -4,3 +4,5 @@ export const SET_GOODS='SET_GOODS' //商品收藏
 export const SET_ORDERS='SET_ORDERS' //订单
 
 export const SET_XZADDRESS='SET_XZADDRESS'  //地址
+
+export const SET_TOKEN  = 'SET_TOKEN'//设置token

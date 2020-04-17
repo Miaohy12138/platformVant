@@ -69,9 +69,10 @@ export default {
                 message: res.data.msg,
                  duration: 950
               });
-
             }
-          });
+          }).catch(err=>{
+          console.log(err);
+        });
       }
     },
     go_zc() {

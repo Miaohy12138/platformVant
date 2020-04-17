@@ -114,7 +114,6 @@ export default {
 <style lang="stylus" scoped>
 .active {
 }
-
 .main-xs {
   width: 100%;
   height: 100%;

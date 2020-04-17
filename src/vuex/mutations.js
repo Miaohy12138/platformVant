@@ -4,14 +4,12 @@ import { MessageBox } from 'mint-ui';
 import axios from 'axios'
 
 const matutaions={
-   
+
 
     [type.SET_XZADDRESS](state,data){
         state.xzAddess.push(data)
         // localStorage.setItem("xzAddess",JSON.stringify(state.xzAddess));
     },
-    
-
     //数量加
      add(state,cart){
         cart.sum++
@@ -25,6 +23,10 @@ const matutaions={
         state.carts=[];
         localStorage.setItem("carts",JSON.stringify(state.carts));
     },
+  //设置token
+    [type.SET_TOKEN](state,data){
+      state.token = data
+    }
 }
 
 export default matutaions

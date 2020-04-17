@@ -9,72 +9,54 @@
         <i class="iconfont icon-shezhi-xianxing"></i>
       </div>
     </div>
+
     <div class="container">
-
-        <div class="container-bj" >
-          <div class="bj-left">
-            <!-- <img src="/static/img/tou.jpg"> -->
-            <router-link class="container-userinfo" to="/main/userinfo" tag="div">
-            <img :src="user_img">
-            <input type="file" @change='up_user_tx' name="sp_image" class="sp_image" ref="sp_image"
-                   style="position: absolute;margin-top:100px">
-            </router-link>
-          </div>
-          <div class="bj-right">
-            <span>{{name}}</span>
-            <p>闲话终日有，不听自然无</p>
-          </div>
+      <div class="container-bj" @click="editUserInfo">
+        <div class="bj-left">
+          <van-image
+                  round
+                  width="2rem"
+                  height="2rem"
+                  :src="avatar_url"
+          />
         </div>
-
-
-
+        <div class="bj-right">
+          <span>{{name}}</span>
+          <p>闲话终日有，不听自然无</p>
+        </div>
+      </div>
       <van-grid :column-num="3">
         <van-grid-item icon="photo-o" text="余额" />
         <van-grid-item icon="photo-o" text="换鼓励金" />
         <van-grid-item icon="photo-o" text="积分" />
       </van-grid>
-<!--      <div class="container-integral">-->
-
-<!--        <p>-->
-<!--          <span>{{moneny}}</span>-->
-<!--          <span>余额</span>-->
-<!--        </p>-->
-<!--        <p>-->
-<!--          <span>0</span>-->
-<!--          <span>换鼓励金</span>-->
-<!--        </p>-->
-<!--        <p>-->
-<!--          <span>{{jifeng}}</span>-->
-<!--          <span>积分</span>-->
-<!--        </p>-->
-<!--      </div>-->
-
-      <router-link class="container-order" to="/order" tag="div">
-        <van-cell title="我的挂号单" icon="like-o" is-link size="large"/>
-        <div class="container-order-2">
-          <p class v-for="list in container">
-            <img :src="list.img">
-            <span>{{list.name}}</span>
-          </p>
-        </div>
-      </router-link>
-
-      <van-cell title="我的收藏" icon="like-o" is-link to="collection" size="large"/>
-      <router-link :to="{name:'address'}" class="con">
-        <van-cell title="就诊人管理" icon="friends-o" is-link size="large"/>
-      </router-link>
-
       <div class="container-con">
+        <router-link class="container-order" to="/order" tag="div">
+          <van-cell title="我的挂号单" icon="like-o" is-link size="large"/>
+          <div class="container-order-2">
+            <p class v-for="list in container">
+              <img :src="list.img">
+              <span>{{list.name}}</span>
+            </p>
+          </div>
+        </router-link>
+
+        <router-link to="/collection" class="con">
+          <van-cell title="我的收藏" icon="like-o" is-link  size="large"/>
+        </router-link>
+
+        <router-link :to="{name:'address'}" class="con">
+          <van-cell title="就诊人管理" icon="friends-o" is-link size="large"/>
+        </router-link>
+
         <router-link :to="{name:'cart'}" class="con">
           <van-cell title="我的购物车" icon="shopping-cart-o" is-link size="large"/>
         </router-link>
-        <!--        <router-link :to="{name:'cart'}" class="con">-->
-        <!--          <mt-cell icon="iconfont icon-collection" title="我的购物车" is-link>-->
-        <!--            <img slot="icon" src="../../assets/icon/cart-Empty.png" width="26" height="26">-->
-        <!--          </mt-cell>-->
-        <!--        </router-link>-->
       </div>
+
     </div>
+
+
     <div>
       <router-view></router-view>
     </div>
@@ -82,9 +64,6 @@
   </div>
 </template>
 <script>
-  import {Toast, MessageBox} from "mint-ui";
-  import {Actionsheet} from 'mint-ui';
-
   import {setCookie, getCookie, delCookie} from "../../assets/js/cookie.js";
   import HomeFooter from '../../views/footer';
   import axios from "axios";
@@ -113,7 +92,8 @@
           }
         ],
         user_img: '',
-        moneny: ''
+        moneny: '',
+        avatar_url:'https://img.yzcdn.cn/vant/cat.jpeg'
 
       };
     },
@@ -122,16 +102,14 @@
     },
     mounted() {
       /*页面挂载获取保存的cookie值，渲染到页面上*/
-      let cookier_name = getCookie("name");
+      let cookier_name = getCookie("username");
       let cookier_token = getCookie("token");
       let cookier_moneny = getCookie("moneny");
       this.name = cookier_name;
       /*如果cookie不存在，则跳转到登录页*/
-      if (cookier_name == "") {
+      if (cookier_token == "") {
         this.$router.push("login");
       }
-      ;
-
     },
     methods: {
       zx() {
@@ -160,8 +138,10 @@
             //异常操作
           });
       },
-
-
+      editUserInfo(){
+        //this.$router.push({ name: 'demo2', params: { userId: 123 }})
+        this.$router.push({name:'/main/userinfo'})
+      }
     }
   };
 </script>
@@ -270,7 +250,7 @@
 
   .container {
     width: 100%;
-    height: 3rem;
+    height: 3.2rem;
     position: absolute;
     top: 1.45rem;
 
@@ -291,13 +271,7 @@
         display flex
         justify-content center
         align-items center
-
-        img {
-          width 65%
-          height 55%
-        }
       }
-
       .bj-right {
         width 60%
         height 100%
@@ -310,12 +284,6 @@
         span {
           font-weight bold
         }
-      }
-
-      img {
-        width: 2.3rem;
-        height: 2.3rem;
-        border-radius: 50%;
       }
 
       span {
