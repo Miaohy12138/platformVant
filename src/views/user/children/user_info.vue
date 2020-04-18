@@ -1,51 +1,55 @@
 <template>
 
-  <div class="main-xs">
-    <van-nav-bar
-            title="个人信息修改"
-            left-text="返回"
-            left-arrow
-            @click-left="onClickLeft"
-    />
-    <div class="info-form">
-      <van-form @submit="onSubmit">
-        <van-field
-                v-model="username"
-                name="用户名"
-                label="用户名"
-                placeholder="请输入用户名"
-                :rules="[{ validator: asyncValidator,message: '用户名已存在' }]"
-        />
-        <van-field
-                v-model="mobile"
-                type="text"
-                name="手机号"
-                label="手机号"
-                placeholder="请输入手机号"
-                :rules="[{  message: '请输入手机号' }]"
-        />
+  <div >
+    <Userheader title="个人信息修改"></Userheader>
+    <div class="main-xs">
+      <div class="info-form">
+        <van-form @submit="onSubmit">
+          <van-field
+                  v-model="username"
+                  name="用户名"
+                  label="用户名"
+                  placeholder="请输入用户名"
+                  :rules="[{ validator: asyncValidator,message: '用户名已存在' }]"
+          />
+          <van-field
+                  v-model="mobile"
+                  type="text"
+                  name="手机号"
+                  label="手机号"
+                  placeholder="请输入手机号"
+                  :rules="[{ require:true, message: '请输入手机号' }]"
+          />
+          <van-field name="radio" label="性别">
+            <template #input>
+              <van-radio-group v-model="sex" direction="horizontal">
+                <van-radio name="1" >男</van-radio>
+                <van-radio name="0">女</van-radio>
+              </van-radio-group>
+            </template>
+          </van-field>
+          <van-field name="uploader" label="头像上传" >
+            <template #input>
+              <van-uploader v-model="uploader"  multiple :max-count="1"/>
+            </template>
+          </van-field>
 
-        <van-field name="radio" label="性别">
-          <template #input>
-            <van-radio-group v-model="sex" direction="horizontal">
-              <van-radio name="1" >男</van-radio>
-              <van-radio name="0">女</van-radio>
-            </van-radio-group>
-          </template>
-        </van-field>
+          <div style="margin: 16px;">
+            <van-button round block type="info" native-type="submit">
+              提交
+            </van-button>
+          </div>
 
-        <van-field name="uploader" label="头像上传" >
-          <template #input>
-            <van-uploader v-model="uploader"  multiple :max-count="1"/>
-          </template>
-        </van-field>
-        <div style="margin: 16px;">
-          <van-button round block type="info" native-type="submit">
-            提交
-          </van-button>
-        </div>
-      </van-form>
+        </van-form>
+      </div>
     </div>
+<!--    <van-nav-bar-->
+<!--            title="个人信息修改"-->
+<!--            left-text="返回"-->
+<!--            left-arrow-->
+<!--            @click-left="onClickLeft"-->
+<!--    />-->
+
   </div>
 
 </template>
@@ -54,6 +58,7 @@
   import {setCookie, getCookie, delCookie} from "../../../assets/js/cookie.js";
   import API from '../../../assets/js/api'
   import {Toast} from "vant";
+  import Userheader from "../../common/header";
   export default {
     name:'userinfo',
     data() {
@@ -86,6 +91,7 @@
     created() {
     },
     components: {
+      Userheader
     },
     methods: {
       onClickLeft() {
@@ -117,18 +123,20 @@
       }
     },
   };
+
 </script>
 
 <style lang="stylus" scoped>
   .active {
   }
   .main-xs {
+    padding-top 1.45rem
     width: 100%;
     height: 100%;
     position: fixed;
     left: 0;
     top: 0;
-    z-index: 80;
+    z-index: 1;
     background: #f4f4f4;
   }
 

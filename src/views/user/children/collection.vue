@@ -7,28 +7,7 @@
                 <span :class="{active:index==collectionIndex}">{{list.name}}</span>
             </p>
         </div>
-        <!-- <div class="shop_2_box">
-            <div class="shop_2" v-show="collectionIndex===0"  v-for="(list,index) in collections" :key="index">
-                <div class="shop-1">
-                    <p class="left">库存充足</p>
-                    <p class="right">取消收藏</p>
-                </div>
-                <div class="shop-2">
-                    <p class="img">
-                        <img :src="list.img">
-                    </p>
-                    <p class="text">
-                        <span class="name">1</span>
-                        <span class="price">¥2</span>
-                    </p>
 
-                    <p class="go">
-                        <span>去购买</span>
-                    </p>
-
-                </div>
-            </div>
-        </div> -->
 
 
         <div v-show="collectionIndex===1" v-for="(list,index) in wz" :key="index">

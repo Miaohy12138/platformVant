@@ -15,8 +15,6 @@
                         <div class="container-con">{{list.abstract}}</div>
                         <div class="container-time">发布日期 {{list.time}}</div>
                     </li>
-
-
                 </div>
             </div>
         </div>

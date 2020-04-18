@@ -2,7 +2,7 @@
   <div class="cart">
     <div class="header">
       <div class="header-left">
-        <router-link to="/main">
+        <router-link to="/main2">
           <i class="iconfont icon-zuojiantou"></i>
         </router-link>
       </div>

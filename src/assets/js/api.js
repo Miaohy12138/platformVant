@@ -29,7 +29,7 @@ const appapi = axios.create({
   //headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'},
   baseURL:apiserver
 });
-
+//request拦截
 appapi.interceptors.request.use(function (config) {
   let token = getCookie("token");
   config.headers.common['token'] = token;
@@ -37,6 +37,11 @@ appapi.interceptors.request.use(function (config) {
 },function (error) {
   return Promise.reject(error)
 });
+//response 拦截
+appapi.interceptors
+
+
+
 
 let apppost = (url,params) =>{
   return appapi.post(url,params)
@@ -61,8 +66,13 @@ export default {
   editUserInfo:params=>{
     return apppost('/user/editUser',params);
   },
-
-
+  //就诊人
+  editVistPerson:params=>{
+    return apppost('/visitPerson/edit',params);
+  },
+  visitPersonList:params=>{
+    return apppost('/visitPerson/list',params);
+  }
 }
 
 

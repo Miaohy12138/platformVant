@@ -10,6 +10,7 @@
       </div>
     </div>
 
+
     <div class="container">
       <div class="container-bj" @click="editUserInfo">
         <div class="bj-left">
@@ -45,7 +46,7 @@
           <van-cell title="我的收藏" icon="like-o" is-link  size="large"/>
         </router-link>
 
-        <router-link :to="{name:'address'}" class="con">
+        <router-link :to="{name:'visitperson'}" class="con">
           <van-cell title="就诊人管理" icon="friends-o" is-link size="large"/>
         </router-link>
 

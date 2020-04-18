@@ -8,6 +8,8 @@
   },
   "dependencies": {
     "axios": "^0.19.2",
+    "less": "^3.11.1",
+    "less-loader": "^5.0.0",
     "mint-ui": "^2.2.13",
     "stylus": "^0.54.7",
     "stylus-loader": "^3.0.2",
@@ -15,9 +17,9 @@
     "vue": "^2.6.11",
     "vue-lazyload": "latest",
     "vue-loader": "^13.3.0",
-    "vue-style-loader": "^3.0.1",
     "vue-navigation": "^1.1.4",
     "vue-router": "^3.1.6",
+    "vue-style-loader": "^3.0.1",
     "vue-template-compiler": "^2.5.2",
     "vuex": "^3.1.3"
   },
