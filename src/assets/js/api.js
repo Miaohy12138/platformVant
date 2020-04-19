@@ -1,5 +1,8 @@
 import axios from 'axios'
 import {getCookie} from "./cookie";
+import { Notify } from 'vant';
+import router from "../../router";
+
 const http='http://www.kuangjiahu.top/';
 export const login = http+'/user/login/' //登陆
 export const add_order=http+'/add_order/' //提交订单
@@ -29,6 +32,7 @@ const appapi = axios.create({
   //headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'},
   baseURL:apiserver
 });
+
 //request拦截
 appapi.interceptors.request.use(function (config) {
   let token = getCookie("token");
@@ -37,11 +41,33 @@ appapi.interceptors.request.use(function (config) {
 },function (error) {
   return Promise.reject(error)
 });
+
 //response 拦截
-appapi.interceptors
-
-
-
+appapi.interceptors.response.use(response => {
+  let res = response.data;
+  return response
+}, err => {
+  let errData = err.response.data;
+      switch (errData.code) {
+        case 400:
+          console.log('错误请求');
+          break;
+        case 401:
+          Notify({
+            message: '登录过期，请重新登录',
+            duration:1000,
+            }
+          );
+          goLogin();
+          break;
+        default:
+          console.log(err.data.code)
+  }
+  return Promise.resolve(err.response)
+});
+function goLogin(){
+  router.push("/login")
+}
 
 let apppost = (url,params) =>{
   return appapi.post(url,params)

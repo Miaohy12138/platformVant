@@ -16,9 +16,28 @@
                 @load="onLoadList"
                 :offset="offset"
         >
-          <van-panel :desc="'手机号:'+item.mobile"  v-for="item in list" :key="item.id" :title="item.name">
+          <van-cell v-for="(item,index) in list" class="visit-item">
+            <van-swipe-cell  >
+              <van-row>
+                <van-col span="16" style="margin-top: 0.1rem">
+                  <van-icon name="friends-o" />
+                  <span>  姓名：{{item.name}}</span>
+                  <van-tag class ="defaulttag" round type="primary" v-show="item.isDefault==1">默认就诊人</van-tag>
+                  <br>
+                  <van-icon name="phone-o" />
+                  <span>手机号：{{item.mobile}}</span>
+                </van-col>
+                <van-col span="8">
+                </van-col>
+              </van-row>
+              <template #right>
+                <van-button square type="danger" text="删除" @click="deleteItem(item.id,index)"  />
+              </template>
+            </van-swipe-cell>
 
-          </van-panel>
+          </van-cell>
+<!--          <van-panel :desc="'手机号:'+item.mobile"  v-for="item in list" :key="item.id" :title="item.name">-->
+<!--          </van-panel>-->
         </van-list>
 
 
@@ -35,18 +54,19 @@ import AddressHeader from "../../common/header";
 import { setCookie, getCookie } from "../../../assets/js/cookie.js";
 import API from "../../../assets/js/api"
 import success from "../../common/success";
+import { Dialog } from 'vant';
 export default {
   data() {
     return {
       list: [],
-      offset:20,
+      offset:200,
       loading: false,
       finished: false,
       upFinished:false,
       totalCount:0,
       pageIdx:0,
       pageSize:10,
-      timeout:300
+      timeout:300,
     };
   },
   components: {
@@ -68,7 +88,11 @@ export default {
       this.successList(params);
     },
     onLoadList() {
-      this.pageIdx++;
+      if(this.list.length==0){
+
+      }else {
+        this.pageIdx++;
+      }
       this.getList();
     },
     successList(params){
@@ -80,23 +104,44 @@ export default {
           if(this.list.length>=this.totalCount){
             this.upFinished = true;
           }else{
+            if(this.pageIdx==0) {
+              this.list = [];
+            }
             this.list = this.list.concat(visitPersons);
-            console.log(this.list);
           }
           if(visitPersons.length <this.pageSize){
             this.upFinished = true;
           }
         })
           .catch(err=>{
-
-          }).finally(()=>{
+          })
+          .finally(()=>{
           this.loading = false;
         });
       }, this.timeout);
     },
-    onLoad() {
-    },
-  }
+    deleteItem(id,index){
+      Dialog.confirm({
+        message: '确定删除吗？',
+      }).then(() => {
+        console.log(id);
+        let pdata = {
+          actionType:2,
+          visitPerson:{
+            id:id
+          }
+        };
+        API.editVistPerson(pdata).then(res=>{
+          this.list.splice(index,1)
+        })
+        .catch(err=>{
+
+        })
+      });
+
+    }
+  },
+
 };
 </script>
 
@@ -118,4 +163,14 @@ export default {
   z-index 1
   background-color white
 }
+  .visit-item{
+    height 2rem
+    font-size 0.38rem
+  }
+  .defaulttag{
+    margin-left 0.2rem
+  }
+  .van-button::before{
+    height: 100%;
+  }
 </style>
