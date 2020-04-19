@@ -98,6 +98,9 @@ export default {
   },
   visitPersonList:params=>{
     return apppost('/visitPerson/list',params);
+  },
+  getVisitPerson:params=>{
+    return apppost('/visitPerson/detail',params);
   }
 }
 

@@ -57,6 +57,7 @@
 <script>
 import AddressHeader from "../../common/header";
 import API from "../../../assets/js/api"
+import {Toast} from "vant";
 export default {
   name: "add_address",
   data() {
@@ -71,11 +72,31 @@ export default {
   components: {
     AddressHeader
   },
+  mounted(){
+    let id = this.$route.params.id;
+    let pdata = {
+      id:id
+    };
+    let _this = this;
+    API.getVisitPerson(pdata).then(res=>{
+      let person = res.data.data.visitPerson;
+      _this.username =person.name;
+      _this.mobile = person.mobile;
+      _this.sex = person.sex+'';
+      _this.age = person.age;
+      _this.id_card = person.idCard;
+    })
+    .catch(err=>{
+
+    })
+  },
   methods: {
     btn() {
+      let id  = this.$route.params.id;
       let pdata = {
-        actionType:1,
+        actionType:3,
         visitPerson:{
+          id:id,
           name:this.username,
           mobile:this.mobile,
           sex:this.sex,
@@ -84,6 +105,7 @@ export default {
         }
       };
       API.editVistPerson(pdata).then(res=>{
+        Toast.success({message:'修改成功',duration :250,onClose:()=>{ this.$router.back(-1)}} );
       })
       .catch(err=>{
 

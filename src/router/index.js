@@ -35,6 +35,7 @@ import collection from "../views/user/children/collection"
 import userinfo from "../views/user/children/user_info"
 import visitperson from "../views/user/children/visitperson"
 import add_visitperson from "../views/user/children/add_visitperson"
+import edit_visitperson from "../views/user/children/edit_visitperson";
 
 //test
 import contact from "../views/user/children/contact";
@@ -59,7 +60,12 @@ const routes = [
       },
       {
         path: 'add_visitperson',
+        name:'add_visitperson',
         component: add_visitperson
+      },
+      {
+        path:'edit_visitperson/:id',
+        component:edit_visitperson
       },
       {
         path: 'upaddress',

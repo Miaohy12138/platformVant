@@ -31,6 +31,7 @@
                 </van-col>
               </van-row>
               <template #right>
+                <van-button square type="primary" text="编辑"@click="editItem(item.id,index)"/>
                 <van-button square type="danger" text="删除" @click="deleteItem(item.id,index)"  />
               </template>
             </van-swipe-cell>
@@ -139,6 +140,9 @@ export default {
         })
       });
 
+    },
+    editItem(id,index){
+      this.$router.push('edit_visitperson/'+id);
     }
   },
 
