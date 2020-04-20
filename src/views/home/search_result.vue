@@ -12,7 +12,8 @@
       />
     </div>
     <div class="tab">
-      <van-tabs v-model="active">
+<!--      animated 会使下拉菜单失效-->
+      <van-tabs v-model="active" >
         <van-tab title="综合"></van-tab>
         <van-tab title="医院"><hospital_list :name="searchValue"></hospital_list></van-tab>
         <van-tab title="医生">医生</van-tab>
@@ -31,14 +32,9 @@
     components:{
       hospital_list,
     },
-    data(){
-      return {
-        searchValue
-      }
-    },
     mounted() {
       let name = this.$route.params.name;
-      console.log(name);
+      this.searchValue = name;
     },
     data(){
       return {

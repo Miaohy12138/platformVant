@@ -13,7 +13,7 @@
 <!--    </div>-->
     <div class="filter">
       <van-dropdown-menu>
-        <van-dropdown-item v-model="hlevel" :options="hlevel" title="医院等级"/>
+        <van-dropdown-item v-model="hlevel" :options="hlevels" title="医院等级"/>
         <van-dropdown-item v-model="value2" :options="option2" title="条件筛选"/>
       </van-dropdown-menu>
     </div>
@@ -38,7 +38,7 @@
         totalCount:0,
         hlevel: 0,
         value2: 'a',
-        hlevel: [
+        hlevels: [
           { text: '三级医院', value: 1},
           { text: '二级医院', value: 2 },
           { text: '一级医院', value: 3 },
@@ -106,7 +106,6 @@
 
   }
   .filter{
-
   }
   .list-main{
 

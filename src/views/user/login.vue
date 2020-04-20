@@ -31,6 +31,7 @@
 import { setCookie, getCookie } from "../../assets/js/cookie.js";
 import { Toast } from "mint-ui";
 import  API  from "../../assets/js/api";
+import {Notify} from "vant";
 export default {
   data() {
     return {
@@ -64,11 +65,12 @@ export default {
               _this.$router.push("main");
               setCookie("username", _this.name);
               setCookie("token", res.data.data.token);
-            } else if (res.data.code == 1) {
-              Toast({
-                message: res.data.msg,
-                 duration: 950
-              });
+            } else if (res.data.code == 4000) {
+              Notify({
+                  message: res.data.data,
+                  duration:1000,
+                }
+              );
             }
           }).catch(err=>{
           console.log(err);
