@@ -65,6 +65,8 @@ appapi.interceptors.response.use(response => {
   }
   return Promise.resolve(err.response)
 });
+
+
 function goLogin(){
   router.push("/login")
 }
@@ -101,6 +103,13 @@ export default {
   },
   getVisitPerson:params=>{
     return apppost('/visitPerson/detail',params);
+  },
+  //医院相关
+  getHospitalList:params=>{
+    return apppost ('/hospital/list',params);
+  },
+  getHospitalDetail:params=>{
+    return apppost('/hospital/detail',params);
   }
 }
 

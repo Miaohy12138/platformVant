@@ -2,10 +2,10 @@
   <div id="bottom">
     <van-tabbar route>
       <van-tabbar-item replace to="/home" icon="home-o">
-        标签
+        首页
       </van-tabbar-item>
-      <van-tabbar-item replace to="/news" icon="user-o">
-        标签
+      <van-tabbar-item replace to="/news" icon="search">
+        发现
       </van-tabbar-item>
       <van-tabbar-item replace to="/main" icon="user-o">
         我的

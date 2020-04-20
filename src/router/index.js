@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 Vue.use(VueRouter);
-import Home from '../views/home/Home'
+
 import xz_address from "../views/user/children/xz_address"
 
 import view from '../views/view/view'
@@ -32,10 +32,18 @@ import collection from "../views/user/children/collection"
 /**
  * 重构
  */
+//user相关
 import userinfo from "../views/user/children/user_info"
 import visitperson from "../views/user/children/visitperson"
 import add_visitperson from "../views/user/children/add_visitperson"
 import edit_visitperson from "../views/user/children/edit_visitperson";
+
+//首页
+import Home from '../views/home/Home'
+import search from "../views/home/search";
+//医院
+import hospital_list from "../views/hospital/hospital_list";
+import search_result from "../views/home/search_result";
 
 //test
 import contact from "../views/user/children/contact";
@@ -47,7 +55,6 @@ const routes = [
   {path: '/xz_address', name: 'xz_address', component: xz_address},
   {path: '/register', name: 'register', component: register},
   {path: '/contact', name: 'contact', component: contact},
-  {path:'/main2',name:'main2',component:main2},
   {
     path: '/main',
     name: 'main',
@@ -98,7 +105,10 @@ const routes = [
   {path: '/success', name: 'success', component: success},
   {path: '/classify', name: 'classify', component: classify},
   {path: '/pay', name: 'pay', component: pay},
-  {path: '/shopDetail', name: 'shopDetail', component: shopDetail}
+  {path: '/shopDetail', name: 'shopDetail', component: shopDetail},
+  {path:'/search',name:'search',component:search},
+  {path:'/search_result/:name',name:'search_result',component:search_result},
+  {path:'/hospital_list/:name',name:'hospital_list',component:hospital_list}
 ];
 
 const router = new VueRouter({
