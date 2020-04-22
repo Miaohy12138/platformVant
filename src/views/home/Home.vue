@@ -4,9 +4,7 @@
             v-model="value"
             placeholder="请输入搜索关键词"
             input-align="center"
-
             @focus="focus"
-
     />
     <HomeFooter></HomeFooter>
   </div>
@@ -26,8 +24,9 @@
     },
     methods:{
       focus(){
-        console.log("aaa");
-        this.$router.push("/search")
+        this.$router.push("/search").catch(err=>{
+
+        })
       },
 
     }

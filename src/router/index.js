@@ -42,9 +42,12 @@ import edit_visitperson from "../views/user/children/edit_visitperson";
 import Home from '../views/home/Home'
 import search from "../views/home/search";
 //医院
-import hospital_list from "../views/hospital/hospital_list";
+import hospital_list from "../views/search/hospital_list";
 import search_result from "../views/home/search_result";
-
+import hospital_home from "../views/hospital/hospital_home"
+import hospital_page from "../views/hospital/hospital_page"
+//医生
+import doctor_list from "../views/search/doctor_list";
 //test
 import contact from "../views/user/children/contact";
 import main2 from "../views/user/main2";
@@ -95,7 +98,7 @@ const routes = [
   {path: '/', name: 'Home', component: Home},
   {path: '/Home', name: 'Home', component: Home},
   {path: '/goodDetail', name: 'goodDetail', component: goodDetail},
-  {path: '/order', name: 'order', component: order,},
+  {path: '/order', name: 'order', component: order},
   {path: '/orderView', name: 'orderView', component: orderView},
   {path: '/choose', name: 'choose', component: choose},
   {path: '/newsView', name: 'newsView', component: newsView},
@@ -108,7 +111,10 @@ const routes = [
   {path: '/shopDetail', name: 'shopDetail', component: shopDetail},
   {path:'/search',name:'search',component:search},
   {path:'/search_result/:name',name:'search_result',component:search_result},
-  {path:'/hospital_list/:name',name:'hospital_list',component:hospital_list}
+  {path:'/hospital_list/:name',name:'hospital_list',component:hospital_list},
+  {path:'/doctor_list/:name',name:'doctor_list',component:doctor_list},
+  {path:'/hospital_home/:id',name:'hospital_home',component:hospital_home},
+  {path:'/hospital_page/:id',name:'hospital_page',component:hospital_page},
 ];
 
 const router = new VueRouter({

@@ -1,0 +1,2896 @@
+.g-suggest {
+    position: relative;
+    height: 46px;
+    background-color: #fff;
+    color: #83889a
+}
+
+.g-suggest--input {
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 8px 12px;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center
+}
+
+.g-suggest--input-wrap {
+    position: relative;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    width: 1%
+}
+
+.g-suggest--input-wrap input[type=search] {
+    padding: 5px 28px 5px 12px;
+    background: #f5f6f6;
+    width: 100%;
+    height: 30px;
+    line-height: 20px;
+    font-size: 14px;
+    color: #28354c;
+    border-radius: 20px;
+    border: none;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    outline: none
+}
+
+.g-suggest--input-wrap input::-webkit-search-cancel-button {
+    -webkit-appearance: none
+}
+
+.g-suggest--input-wrap input::-webkit-input-placeholder {
+    color: #999
+}
+
+.g-suggest--input-wrap input::-ms-input-placeholder {
+    color: #999
+}
+
+.g-suggest--input-wrap input::placeholder {
+    color: #999
+}
+
+.search-icon input[type=search] {
+    padding-left: 36px
+}
+
+.search-icon:before {
+    position: absolute;
+    z-index: 1;
+    content: "";
+    width: 14px;
+    height: 14px;
+    left: 11px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    background: url(https://static.guahao.cn/front/portal-h5-node/gray-search.cfda5be2b31e1669e46a9bc82bf199f2.png) no-repeat 50%;
+    background-size: cover
+}
+
+.g-suggest--input-clear {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 5px;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 28px;
+    height: 30px
+}
+
+.g-suggest--input-clear:after {
+    display: block;
+    content: "";
+    width: 13px;
+    height: 13px;
+    background: url(https://static.guahao.cn/front/portal-h5-node/sprites-3.7be6d59a3c3cbb9bcd5011f61f282dfc.png) no-repeat;
+    background-size: 95px 435px;
+    background-position: -60.5px -371.5px
+}
+
+.g-suggest--result {
+    position: fixed;
+    z-index: 301;
+    max-width: 16rem;
+    width: 100%;
+    display: block;
+    background-color: #fff;
+    border-top: 1px solid #eee;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch
+}
+
+.g-suggest--result .g-suggest--result-item {
+    position: relative;
+    padding-right: 15px;
+    padding-left: 15px;
+    height: 46px;
+    line-height: 46px;
+    border-bottom: 1px solid #eee;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #28354c;
+    font-size: 14px
+}
+
+.g-suggest--result .select-icon {
+    padding-left: 30px
+}
+
+.g-suggest--result .select-icon:before {
+    content: "";
+    position: absolute;
+    left: 9px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    width: 12px;
+    height: 12px;
+    background: #fff url(https://static.guahao.cn/front/portal-h5-node/search-search.92c32032af20605265ce5c6c9e69d514.png) no-repeat;
+    background-size: cover
+}
+
+.g-search {
+    position: relative;
+    height: 46px;
+    color: #83889a
+}
+
+.g-search--fixed {
+    position: fixed;
+    z-index: 201;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: 100%;
+    max-width: 16rem;
+    background-color: #fff
+}
+
+.g-search--input-cancel {
+    margin-left: 12px;
+    color: #83889a;
+    font-size: 14px
+}
+
+.g-search--active {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    z-index: 304;
+    height: 100%
+}
+
+.g-search--active .g-search--history {
+    display: block
+}
+
+.g-search--history {
+    display: none;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    height: 1%;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    border-top: 1px solid #eee
+}
+
+.g-search--history li {
+    position: relative;
+    padding: 0 15px 0 30px;
+    height: 46px;
+    line-height: 46px;
+    border-bottom: 1px solid #eee;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap
+}
+
+.g-search--history li:before {
+    content: "";
+    position: absolute;
+    left: 9px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    width: 12px;
+    height: 12px;
+    background: #fff url(https://static.guahao.cn/front/portal-h5-node/search-history.04759916d033874a8393f253244fca99.png) no-repeat;
+    background-size: cover
+}
+
+.g-search--history-clear {
+    height: 46px;
+    line-height: 46px;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+    color: #3278ee
+}
+
+.g-navigation {
+    padding: .512rem
+}
+
+.g-navigation .g-navigation--breadcrumb {
+    font-size: .512rem;
+    color: #a6a8b6
+}
+
+.g-navigation .g-navigation--breadcrumb a {
+    color: #a6a8b6
+}
+
+.g-navigation .g-navigation--breadcrumb a:after {
+    content: ">";
+    display: inline-block;
+    font-size: .512rem;
+    margin-left: .21333333rem;
+    margin-right: .08533333rem;
+    color: #d1d3db
+}
+
+.g-navigation .g-navigation--nav {
+    margin-top: .85333333rem;
+    text-align: center
+}
+
+.g-navigation .g-navigation--nav p {
+    font-size: .512rem
+}
+
+.g-navigation .g-navigation--nav p a {
+    display: inline-block;
+    margin-left: .34133333rem;
+    padding-right: .34133333rem;
+    border-right: 1px solid #b0b0b0;
+    color: #b0b0b0;
+    line-height: .59733333rem
+}
+
+.g-navigation .g-navigation--nav p a:last-child {
+    border-right: none
+}
+
+.g-navigation .g-navigation--nav img {
+    display: block;
+    width: 2.56rem;
+    margin: .42666667rem auto
+}
+
+.g-navigation .g-navigation--copyright {
+    line-height: .85333333rem;
+    text-align: center;
+    font-size: .46933333rem;
+    color: #b0b0b0
+}
+
+.x-img-fadein[lazy=loaded], .x-img-fadein[normal=loaded] {
+    -webkit-animation-duration: .6s;
+    animation-duration: .6s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn
+}
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0
+    }
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0
+    }
+    to {
+        opacity: 1
+    }
+}
+
+.hospital-index-introduce {
+    padding: .24133333rem .212rem .212rem;
+    background: #fff
+}
+
+.hospital-index-introduce--top {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    line-height: 0.452rem
+}
+
+.hospital-index-introduce--name {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    font-size: .338rem;
+    color: #28354c;
+    font-weight: 500;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding-left: 0.2rem;
+}
+
+.hospital-index-introduce--target {
+    color: #83889a;
+    font-size: .352rem
+}
+
+.hospital-index-introduce--target b {
+    display: inline-block;
+    width: .24133333rem;
+    height: .24133333rem;
+    border-top: .06533333rem solid #c4c5ce;
+    border-right: .06533333rem solid #c4c5ce;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg)
+}
+
+.hospital-index-introduce--middle {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin-top: .34133333rem;
+    position: relative
+}
+
+.hospital-index-introduce--middle img {
+    width: 3.26666667rem;
+    height: 2.2rem;
+    margin-right: .212rem;
+    margin-left: .212rem;
+    border-radius: .08533333rem;
+    -o-object-fit: cover;
+    object-fit: cover
+}
+
+.hospital-index-introduce--middle label {
+    display: inline-block;
+    margin-right: .22666667rem;
+    margin-top: .0528rem
+}
+
+.hospital-index-introduce--detail {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #83889a;
+    font-size: .39733333rem;
+    line-height: 1.6;
+    padding-left: 0.5rem;
+}
+
+.hospital-index-introduce--level {
+    float: left;
+    margin-top: .11333333rem;
+    color: #ff695c;
+    background: #ffedeb;
+    border-radius: .34133333rem;
+    width: 1.56rem;
+    margin-right: .42666667rem
+}
+
+.hospital-index-introduce--level, .hospital-index-introduce--rank {
+    font-size: .312rem;
+    height: .48266667rem;
+    line-height: .50266667rem;
+    text-align: center
+}
+
+.hospital-index-introduce--rank {
+    color: #707c93;
+    background: #e0ebfa;
+    width: 6.69866667rem;
+    border-radius: .08533333rem;
+    margin-top: .256rem
+}
+
+.hospital-index-introduce--collect {
+    position: absolute;
+    top: .256rem;
+    left: .256rem;
+    width: 0.824rem;
+    height: 0.824rem;
+    background: url(https://static.guahao.cn/front/portal-h5-node/follow.748a3eabf8f609198820094ad0d8a8aa.png) no-repeat;
+    background-size: 100% 100%
+}
+
+.hospital-index-introduce--collect.favorite {
+    background: url(https://static.guahao.cn/front/portal-h5-node/follow_on.40baed3e793290b07e694a738ff0a11d.png) no-repeat;
+    background-size: 100% 100%
+}
+
+.we-scroll {
+    -webkit-overflow-scrolling: touch
+}
+
+.we-scroll .we-scroll--vertical {
+    overflow-y: scroll
+}
+
+.we-scroll .we-scroll--vertical::-webkit-scrollbar {
+    display: none
+}
+
+.we-scroll .we-scroll--horizontal {
+    white-space: nowrap;
+    overflow-x: scroll
+}
+
+.we-scroll .we-scroll--horizontal::-webkit-scrollbar {
+    display: none
+}
+
+.hospital-index-entry {
+    margin-top: .14133333rem;
+    background: #fff;
+    border-top: .5px solid #ebecf1
+}
+
+.hospital-index-entry--item-container {
+    border-bottom: 1px solid #ebecf1
+}
+
+.hospital-index-entry--item {
+    display: inline-block;
+    width: 50%;
+    color: #83889a;
+    font-size: .302rem;
+    text-align: center;
+    padding: .312rem 0;
+    position: relative
+}
+
+.hospital-index-entry--item img {
+    display: inline-block;
+    width: 1.17733333rem;
+    height: 1.192rem;
+    margin-bottom: -.08533333rem
+}
+
+.hospital-index-entry--item:nth-child(2):before {
+    content: "";
+    position: absolute;
+    width: .04266667rem;
+    height: 1.70666667rem;
+    background: #ebecf1;
+    left: 0;
+    top: 1.42933333rem
+}
+
+.hospital-index-entry--name {
+    color: #28354c;
+    font-size: .39733333rem
+}
+
+.hospital-index-entry--scroll .we-scroll--horizontal {
+    overflow-y: hidden
+}
+
+.hospital-index-entry--scroll-border {
+    border-bottom: .5px solid #ebecf1
+}
+
+.hospital-index-entry--small-item {
+    width: 22%;
+    text-align: center;
+    display: inline-block;
+    padding: .32rem 0
+}
+
+.hospital-index-entry--small-item img {
+    width: 1.19466667rem;
+    height: 1.19466667rem
+}
+
+.hospital-index-entry--small-name {
+    font-size: .39733333rem;
+    color: #28354c;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap
+}
+
+.hospital-index-consult-entry {
+    margin-top: .34133333rem;
+    background: #fff;
+    border-top: 1px solid #ebecf1;
+    border-bottom: 1px solid #ebecf1
+}
+
+.hospital-index-consult-entry--item {
+    display: inline-block;
+    width: 50%;
+    color: #83889a;
+    font-size: .512rem;
+    text-align: center;
+    padding: .512rem 0;
+    position: relative
+}
+
+.hospital-index-consult-entry--item:nth-child(2):before {
+    content: "";
+    position: absolute;
+    width: .04266667rem;
+    height: 1.70666667rem;
+    background: #ebecf1;
+    left: 0;
+    top: 1.42933333rem
+}
+
+.hospital-index-consult-entry--item-img {
+    display: inline-block;
+    width: 1.87733333rem;
+    height: 1.792rem;
+    margin-bottom: -.08533333rem
+}
+
+.hospital-index-consult-entry--item-off {
+    display: inline-block;
+    width: 2.47466667rem;
+    margin-bottom: -.08533333rem;
+    margin-left: .68266667rem
+}
+
+.hospital-index-consult-entry--item-single {
+    display: block;
+    color: #83889a;
+    font-size: .512rem;
+    padding: .68266667rem 0;
+    overflow: hidden;
+    background: url(https://static.guahao.cn/front/portal-h5-node/bg_consult.02d1df293fb7b149a5ea90dbe5d841ae.png) no-repeat;
+    background-size: 6.144rem 2.73066667rem;
+    background-position: 100% 100%
+}
+
+.hospital-index-consult-entry--item-single-img {
+    float: left;
+    width: 1.87733333rem;
+    height: 1.792rem;
+    margin-bottom: -.08533333rem;
+    margin-left: 1.28rem
+}
+
+.hospital-index-consult-entry--item-single-off {
+    float: left;
+    width: 2.47466667rem;
+    height: 1.92rem;
+    margin-bottom: -.08533333rem;
+    margin-left: 1.28rem
+}
+
+.hospital-index-consult-entry--item-single-content {
+    float: left;
+    margin-left: .64rem
+}
+
+.hospital-index-consult-entry--item-single-desp {
+    margin-top: -.08533333rem
+}
+
+.hospital-index-consult-entry--name {
+    color: #28354c;
+    font-size: .59733333rem
+}
+
+.hospital-index-department {
+    padding: .42666667rem .512rem;
+    background: #fff;
+    margin-top: .34133333rem;
+    border-top: 1px solid #ebecf1;
+    border-bottom: 1px solid #ebecf1
+}
+
+.hospital-index-department--top {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    line-height: 1.152rem
+}
+
+.hospital-index-department--name {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    font-size: .59733333rem;
+    color: #28354c
+}
+
+.hospital-index-department--target {
+    color: #83889a;
+    font-size: .512rem
+}
+
+.hospital-index-department--target b {
+    display: inline-block;
+    width: .34133333rem;
+    height: .34133333rem;
+    border-top: .08533333rem solid #c4c5ce;
+    border-right: .08533333rem solid #c4c5ce;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg)
+}
+
+.hospital-index-department--list {
+    font-size: 0;
+    margin-top: .08533333rem;
+    overflow: hidden;
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    white-space: normal;
+    padding-bottom: .08533333rem
+}
+
+.hospital-index-department--list li {
+    display: inline-block;
+    border: 1px solid #a4c5e3;
+    border-radius: 4.26666667rem;
+    width: 3.41333333rem;
+    height: 1.10933333rem;
+    line-height: 1.10933333rem;
+    text-align: center;
+    background: #f3faff;
+    color: #28354c;
+    font-size: .512rem;
+    margin: .21333333rem .34133333rem .21333333rem 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap
+}
+
+.hospital-index-department--list li:nth-child(4n) {
+    margin-right: 0
+}
+
+.we-swipe {
+    overflow: hidden;
+    position: relative;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}
+
+.we-swipe .we-swipe--container {
+    height: 100%
+}
+
+.we-swipe .we-swipe--container .we-swipe-item {
+    float: left;
+    height: 100%
+}
+
+.we-swipe .we-swipe--indicators {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%)
+}
+
+.we-swipe .we-swipe--indicators.we-swipe--indicators-vertical {
+    left: 10px;
+    top: 50%;
+    bottom: auto;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%)
+}
+
+.we-swipe .we-swipe--indicators.we-swipe--indicators-vertical .we-swipe--indicator:not(:last-child) {
+    margin-bottom: 6px
+}
+
+.we-swipe .we-swipe--indicator {
+    border-radius: 100%;
+    background-color: #e3e3e4;
+    width: 6px;
+    height: 6px
+}
+
+.we-swipe .we-swipe--indicator:not(:last-child) {
+    margin-right: 6px
+}
+
+.we-swipe .we-swipe--indicator.we-swipe--indicator-active {
+    background-color: #3f86ff
+}
+
+.hospital-index-banner {
+    margin-top: .34133333rem;
+    height: 4.096rem
+}
+
+.hospital-index-banner img {
+    display: block;
+    width: 100%;
+    height: 4.096rem;
+    -o-object-fit: cover;
+    object-fit: cover
+}
+
+.hospital-index-sns {
+    padding-top: .42666667rem;
+    background: #fff;
+    margin-top: .34133333rem;
+    border-top: 1px solid #ebecf1;
+    border-bottom: 1px solid #ebecf1
+}
+
+.hospital-index-sns--top {
+    padding: 0 .512rem;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    line-height: 1.152rem
+}
+
+.hospital-index-sns--name {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    font-size: .59733333rem;
+    color: #28354c
+}
+
+.hospital-index-sns--target {
+    color: #83889a;
+    font-size: .512rem
+}
+
+.hospital-index-sns--target b {
+    display: inline-block;
+    width: .34133333rem;
+    height: .34133333rem;
+    border-top: .08533333rem solid #c4c5ce;
+    border-right: .08533333rem solid #c4c5ce;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg)
+}
+
+.hospital-index-sns--subject {
+    padding: .42666667rem .512rem;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    border-bottom: 1px solid #ebecf1
+}
+
+.hospital-index-sns--subject img {
+    width: 2.048rem;
+    height: 2.048rem;
+    border-radius: 2.048rem;
+    -o-object-fit: cover;
+    object-fit: cover
+}
+
+.hospital-index-sns--subject-content {
+    padding-left: .42666667rem;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1
+}
+
+.hospital-index-sns--subject-title {
+    color: #28354c;
+    font-size: .68266667rem
+}
+
+.hospital-index-sns--subject-statistic {
+    font-size: .512rem;
+    color: #83889a;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center
+}
+
+.hospital-index-sns--subject-statistic i {
+    display: inline-block;
+    background: #c4c5ce;
+    width: .04266667rem;
+    height: .512rem;
+    margin: 0 .21333333rem
+}
+
+.hospital-index-sns--subject-btn {
+    background: #3f86ff;
+    width: 2.56rem;
+    height: 1.024rem;
+    line-height: 1.024rem;
+    text-align: center;
+    color: #fff;
+    font-size: .512rem;
+    border-radius: 4.26666667rem
+}
+
+.hospital-index-sns--subject-follow-btn {
+    background: #fff;
+    border: 1px solid #c4c5ce;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #83889a
+}
+
+.hospital-index-sns--help {
+    padding: .512rem;
+    border-bottom: 1px solid #ebecf1
+}
+
+.hospital-index-sns--help-title {
+    color: #28354c;
+    overflow: hidden;
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    white-space: normal;
+    font-size: .59733333rem
+}
+
+.hospital-index-sns--help-free, .hospital-index-sns--help-price {
+    font-size: .59733333rem;
+    color: #ff695c;
+    margin-right: .17066667rem
+}
+
+.hospital-index-sns--help-footer {
+    color: #a6a8b6;
+    font-size: .512rem;
+    padding: .512rem 0 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap
+}
+
+.hospital-index-sns--help-footer span {
+    margin-left: .384rem
+}
+
+.hospital-index-sns--help-doctor {
+    width: .64rem;
+    height: .64rem;
+    border-radius: .64rem;
+    -o-object-fit: cover;
+    object-fit: cover;
+    margin-bottom: -.08533333rem
+}
+
+.hospital-index-sns--help-name {
+    color: #28354c;
+    margin-left: .34133333rem
+}
+
+.hospital-index-sns--help-read {
+    float: right
+}
+
+.hospital-index-sns--help-doctors {
+    width: .64rem;
+    height: .64rem;
+    border-radius: .64rem;
+    -o-object-fit: cover;
+    object-fit: cover;
+    float: left;
+    margin-right: -.17066667rem
+}
+
+.hospital-index-sns--article {
+    padding: .512rem;
+    border-bottom: 1px solid #ebecf1
+}
+
+.hospital-index-sns--article-title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #28354c;
+    font-size: .59733333rem
+}
+
+.hospital-index-sns--article-video {
+    width: .768rem;
+    height: .768rem;
+    display: inline-block;
+    margin-right: .21333333rem;
+    margin-bottom: -.128rem;
+    background: url(https://static.guahao.cn/front/portal-h5-node/type_video.d4dde3e080ec13120f2ee0b1b39a688a.png) no-repeat;
+    background-size: 100% 100%
+}
+
+.hospital-index-sns--article-content {
+    color: #83889a;
+    font-size: .59733333rem;
+    line-height: .93866667rem;
+    overflow: hidden;
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    white-space: normal;
+    padding-top: .21333333rem
+}
+
+.hospital-index-sns--article-footer {
+    color: #a6a8b6;
+    font-size: .512rem;
+    padding-top: .42666667rem
+}
+
+.hospital-index-sns--article-footer span {
+    float: right
+}
+
+.hospital-index-sns--article-author {
+    color: #28354c;
+    font-size: .512rem
+}
+
+.hospital-index-sns--article-grade {
+    margin-left: .42666667rem
+}
+
+.hospital-comment-item {
+    border-bottom: 1px solid #ebecf1;
+    overflow: hidden;
+    margin-top: .42666667rem;
+    padding: 0 .512rem
+}
+
+.hospital-comment-item--content {
+    color: #28354c;
+    font-size: .59733333rem;
+    line-height: .85333333rem;
+    padding: .21333333rem 0 .34133333rem
+}
+
+.hospital-comment-item--top {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex
+}
+
+.hospital-comment-item--disease {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    font-size: .59733333rem;
+    color: #3f86ff;
+    text-align: right;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap
+}
+
+.hospital-comment-item--footer {
+    font-size: .512rem;
+    color: #a6a8b6;
+    padding-bottom: .64rem
+}
+
+.hospital-comment-item--footer span {
+    float: right
+}
+
+.hospital-index-comment {
+    padding-top: .42666667rem;
+    background: #fff;
+    margin-top: .34133333rem;
+    border-top: 1px solid #ebecf1
+}
+
+.hospital-index-comment--top {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    line-height: 1.152rem;
+    padding: 0 .512rem
+}
+
+.hospital-index-comment--name {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    font-size: .59733333rem;
+    color: #28354c
+}
+
+.hospital-index-comment--target b {
+    display: inline-block;
+    width: .34133333rem;
+    height: .34133333rem;
+    border-top: .08533333rem solid #c4c5ce;
+    border-right: .08533333rem solid #c4c5ce;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg)
+}
+
+.hospital-index-comment--list {
+    font-size: 0;
+    padding: .29866667rem .512rem 0
+}
+
+.hospital-index-comment--list li {
+    display: inline-block;
+    border-radius: 4.26666667rem;
+    padding: .256rem .46933333rem;
+    text-align: center;
+    background: #f5f6f6;
+    color: #83889a;
+    font-size: .512rem;
+    margin-bottom: .256rem;
+    margin-right: .256rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap
+}
+
+.hospital-index--search-icon {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin-right: .42666667rem;
+    background: url(https://static.guahao.cn/front/portal-h5-node/header_search.5ef80d69dabad451163cc09c2e88e11e.png) no-repeat;
+    background-size: 100% 100%
+}
+
+.hospital-index--header-icon {
+    margin-right: .256rem
+}
+
+.hospital-index--notice-dialog {
+    width: 100%;
+    overflow: hidden;
+    background: #fff;
+    border-radius: .512rem;
+    padding: .17066667rem 0 .04266667rem;
+    position: relative
+}
+
+.hospital-index--notice-dialog h3 {
+    line-height: 2.048rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: center;
+    font-size: .68266667rem;
+    color: #28354c
+}
+
+.hospital-index--notice-content {
+    max-height: 8.02133333rem;
+    overflow-y: auto;
+    padding: 0 .85333333rem
+}
+
+.hospital-index--notice-content pre {
+    font-size: .59733333rem;
+    color: #83889a;
+    text-align: left;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-family: Hiragino Sans GB, Microsoft YaHei, \\5FAE\8F6F\96C5\9ED1, \\5B8B\4F53, Arial, Verdana, sans-serif;
+    overflow: auto
+}
+
+.hospital-index--notice-btn {
+    margin-top: .64rem;
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    line-height: 1.62133333rem;
+    text-align: center;
+    font-size: .68266667rem;
+    color: #3f86ff;
+    border-top: 1px solid #ebecf1
+}
+
+.hospital-index--empty-icon {
+    display: block;
+    width: 2.56rem;
+    height: 2.56rem;
+    margin: 2.85866667rem auto 0;
+    background: url(https://static.guahao.cn/front/portal-h5-node/icon_notfound.f10d592e5157da08c01cb153183fb124.png) no-repeat;
+    background-size: 100% 100%
+}
+
+.hospital-index--empty-text {
+    font-size: .68266667rem;
+    margin-top: 1.024rem;
+    color: #bdbdbd;
+    text-align: center
+}
+
+.hospital-index--empty-link {
+    text-align: center;
+    font-size: .68266667rem;
+    display: block;
+    line-height: 1.92rem;
+    height: 1.92rem;
+    letter-spacing: .08533333rem;
+    margin: 2.56rem 1.70666667rem 0;
+    padding: 0 .42666667rem;
+    border-radius: 1.70666667rem;
+    color: #fff;
+    background-color: #2f7fe2
+}
+
+.hospital-private-introduce[data-v-b876d4a0] {
+    background: #fff
+}
+
+.hospital-private-introduce--banner[data-v-b876d4a0] {
+    display: -webkit-inline-box;
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+    -webkit-flex-direction: row-reverse;
+    -ms-flex-direction: row-reverse;
+    flex-direction: row-reverse
+}
+
+.hospital-private-introduce--banner-item[data-v-b876d4a0] {
+    display: inline-block;
+    height: .85333333rem;
+    position: relative
+}
+
+.hospital-private-introduce--banner-item b[data-v-b876d4a0] {
+    position: absolute;
+    top: -.59733333rem;
+    right: -.59733333rem;
+    display: inline-block;
+    width: 1.28rem;
+    color: #fff;
+    background: red;
+    border-radius: 50%;
+    font-size: .85333333rem;
+    text-align: center;
+    -webkit-transform: scale(.4);
+    transform: scale(.4)
+}
+
+.hospital-private-introduce--banner-item span[data-v-b876d4a0] {
+    position: absolute;
+    top: 0;
+    left: 1.87733333rem;
+    color: rgba(255, 251, 153, .95);
+    display: inline-block;
+    line-height: .85333333rem;
+    font-size: .512rem;
+    letter-spacing: .08533333rem
+}
+
+.hospital-private-introduce--banner img[data-v-b876d4a0] {
+    height: .85333333rem;
+    margin-left: .42666667rem
+}
+
+.hospital-private-introduce--top[data-v-b876d4a0] {
+    padding: 0 .512rem;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    line-height: 1.28rem
+}
+
+.hospital-private-introduce--name[data-v-b876d4a0] {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    font-size: .768rem;
+    color: #28354c;
+    font-weight: 500;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap
+}
+
+.hospital-private-introduce--target[data-v-b876d4a0] {
+    color: #83889a;
+    font-size: .512rem
+}
+
+.hospital-private-introduce--target b[data-v-b876d4a0] {
+    display: inline-block;
+    width: .34133333rem;
+    height: .34133333rem;
+    border-top: .08533333rem solid #c4c5ce;
+    border-right: .08533333rem solid #c4c5ce;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg)
+}
+
+.hospital-private-introduce--middle[data-v-b876d4a0] {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin-bottom: .512rem;
+    margin-top: .512rem;
+    position: relative;
+    padding: 0 .512rem
+}
+
+.hospital-private-introduce--middle img[data-v-b876d4a0] {
+    width: 4.26666667rem;
+    height: 3.2rem;
+    margin-right: .512rem;
+    border-radius: .08533333rem;
+    -o-object-fit: cover;
+    object-fit: cover
+}
+
+.hospital-private-introduce--middle label[data-v-b876d4a0] {
+    display: inline-block;
+    margin-right: .42666667rem;
+    margin-top: .128rem
+}
+
+.hospital-private-introduce--detail[data-v-b876d4a0] {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    color: #83889a;
+    font-size: .59733333rem;
+    line-height: 1.6;
+    white-space: unset
+}
+
+.hospital-private-introduce--phone[data-v-b876d4a0] {
+    margin-top: .21333333rem;
+    font-size: .512rem;
+    line-height: .68266667rem
+}
+
+.hospital-private-introduce--text[data-v-b876d4a0] {
+    margin-top: .17066667rem
+}
+
+.hospital-private-introduce--text a[data-v-b876d4a0] {
+    float: right;
+    color: #649fff
+}
+
+.hospital-private-introduce--collect[data-v-b876d4a0] {
+    position: absolute;
+    top: .256rem;
+    left: .768rem;
+    width: 1.024rem;
+    height: 1.024rem;
+    background: url(https://static.guahao.cn/front/portal-h5-node/follow.748a3eabf8f609198820094ad0d8a8aa.png) no-repeat;
+    background-size: 100% 100%
+}
+
+.hospital-private-introduce--collect.favorite[data-v-b876d4a0] {
+    background: url(https://static.guahao.cn/front/portal-h5-node/follow_on.40baed3e793290b07e694a738ff0a11d.png) no-repeat;
+    background-size: 100% 100%
+}
+
+.hospital-private-introduce--bottom[data-v-b876d4a0] {
+    padding: 0 .512rem;
+    height: 1.70666667rem;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    color: #61687c;
+    border-top: 1px solid #ebecf1;
+    border-bottom: 1px solid #ebecf1;
+    font-size: .512rem
+}
+
+.hospital-private-introduce--bottom span[data-v-b876d4a0] {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    text-align: center
+}
+
+.hospital-private-introduce--bottom span.uv[data-v-b876d4a0] {
+    border-right: 1px solid #ebecf1;
+    border-left: 1px solid #ebecf1
+}
+
+.hospital-private-banner {
+    padding: 1.024rem .512rem;
+    height: 4.096rem
+}
+
+.hospital-private-banner img {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 6px;
+    height: 4.096rem;
+    -o-object-fit: cover;
+    object-fit: cover
+}
+
+.hospital-index-expert {
+    margin: 1.024rem 0 2.048rem
+}
+
+.hospital-index-expert dt {
+    padding: 0 .512rem;
+    line-height: 1;
+    font-size: .93866667rem;
+    color: #28354c;
+    font-weight: 600;
+    margin-bottom: .34133333rem
+}
+
+.hospital-index-expert dd {
+    padding: .68266667rem .512rem;
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    border-bottom: 1px solid #ebecf1
+}
+
+.hospital-index-expert dd .avator {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0;
+    -ms-flex: 0;
+    flex: 0
+}
+
+.hospital-index-expert dd .content {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    width: 1%
+}
+
+.hospital-index-expert dd .content > div {
+    margin-bottom: .17066667rem
+}
+
+.hospital-index-expert dd .content .title-line {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #28354c
+}
+
+.hospital-index-expert dd .content .title-line .name {
+    font-size: .68266667rem
+}
+
+.hospital-index-expert dd .content .title-line span {
+    margin-right: .42666667rem
+}
+
+.hospital-index-expert dd .content .good {
+    color: #61687c;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap
+}
+
+.hospital-index-expert dd .content .account {
+    color: #a6a8b6;
+    margin-bottom: 0;
+    margin-top: .29866667rem
+}
+
+.hospital-index-expert dd .content .account span {
+    margin-right: .42666667rem
+}
+
+.hospital-index-expert dd .content .go-book {
+    position: absolute;
+    padding: .17066667rem .512rem;
+    margin-bottom: 0;
+    background: #3f86ff;
+    color: #fff;
+    line-height: 1;
+    border-radius: 50px;
+    font-size: 12px;
+    right: .512rem;
+    bottom: .59733333rem
+}
+
+.hospital-index-expert dd:last-child {
+    border: none
+}
+
+.hospital-index-expert .avator img {
+    width: 2.048rem;
+    height: 2.048rem;
+    border-radius: 100px;
+    margin-right: .512rem
+}
+
+.hospital-private-department {
+    padding: 0 .512rem;
+    background: #fff;
+    margin: 1.024rem 0 2.048rem
+}
+
+.hospital-private-department--top {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    line-height: 1.152rem
+}
+
+.hospital-private-department--name {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    color: #28354c;
+    font-weight: 600;
+    font-size: .93866667rem
+}
+
+.hospital-private-department--target {
+    color: #83889a;
+    font-size: .512rem
+}
+
+.hospital-private-department--target b {
+    display: inline-block;
+    width: .34133333rem;
+    height: .34133333rem;
+    border-top: .08533333rem solid #c4c5ce;
+    border-right: .08533333rem solid #c4c5ce;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg)
+}
+
+.hospital-private-department--list {
+    font-size: 0;
+    margin-top: .68266667rem;
+    overflow: hidden;
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    white-space: normal;
+    padding-bottom: .08533333rem
+}
+
+.hospital-private-department--list li {
+    display: inline-block;
+    border: 1px solid #a4c5e3;
+    border-radius: 4.26666667rem;
+    width: 3.41333333rem;
+    height: 1.10933333rem;
+    line-height: 1.10933333rem;
+    text-align: center;
+    background: #f3faff;
+    color: #28354c;
+    font-size: .512rem;
+    margin: .21333333rem .34133333rem .21333333rem 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap
+}
+
+.hospital-private-department--list li:nth-child(4n) {
+    margin-right: 0
+}
+
+.hospital-private-department--list li.auto {
+    width: auto;
+    margin: .21333333rem .34133333rem .21333333rem 0;
+    padding: 0 .42666667rem
+}
+
+.hospital-index-say {
+    margin: 2.048rem 0;
+    color: #28354c
+}
+
+.hospital-index-say dt {
+    padding: 0 .512rem;
+    line-height: 1;
+    font-size: .93866667rem;
+    font-weight: 600;
+    margin-bottom: .42666667rem
+}
+
+.hospital-index-say dd a {
+    padding: .512rem;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    line-height: 1;
+    border-bottom: 1px solid #ebecf1;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center
+}
+
+.hospital-index-say dd a span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap
+}
+
+.hospital-index-say dd a i {
+    font-weight: 700
+}
+
+.hospital-index-ask {
+    padding: 0 .512rem;
+    margin: 2.048rem 0;
+    color: #28354c
+}
+
+.hospital-index-ask dt {
+    line-height: 1;
+    font-size: .93866667rem;
+    font-weight: 600
+}
+
+.hospital-index-ask dd {
+    margin-top: .896rem;
+    -webkit-box-shadow: -2px 4px 16px -1px rgba(20, 19, 51, .1);
+    box-shadow: -2px 4px 16px -1px rgba(20, 19, 51, .1);
+    border-radius: 4px;
+    border: 1px solid #ebecf1;
+    padding: .85333333rem .42666667rem
+}
+
+.hospital-index-ask dd p {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    color: #61687c;
+    margin-top: .17066667rem;
+    position: relative
+}
+
+.hospital-index-ask dd .from {
+    color: #a6a8b6;
+    text-align: right;
+    display: block
+}
+
+.hospital-index-ask dd .ask .content {
+    padding-left: 1.06666667rem
+}
+
+.hospital-index-ask dd .ask .content:before {
+    content: "";
+    display: inline-block;
+    width: .85333333rem;
+    height: .85333333rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url(https://kano.guahao.cn/efH91744588) no-repeat 50%/.85333333rem
+}
+
+.hospital-index-ask dd .answer .content {
+    padding-left: 1.06666667rem
+}
+
+.hospital-index-ask dd .answer .content:before {
+    content: "";
+    display: inline-block;
+    width: .85333333rem;
+    height: .85333333rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url(https://kano.guahao.cn/W5t91744529) no-repeat 50%/.85333333rem
+}
+
+.hospital-index-ask dd .content {
+    overflow: hidden;
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    white-space: normal
+}
+
+.private-article-combo-classroom {
+    display: inline-block;
+    width: 7.25333333rem;
+    margin-top: .512rem;
+    margin-bottom: .85333333rem;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: .21333333rem;
+    -webkit-box-shadow: 0 .17066667rem .85333333rem 0 rgba(20, 19, 51, .1);
+    box-shadow: 0 .17066667rem .85333333rem 0 rgba(20, 19, 51, .1)
+}
+
+.private-article-combo-classroom.layout-scroll {
+    margin-top: 0;
+    width: 7.25333333rem;
+    margin-bottom: .93866667rem
+}
+
+.private-article-combo-classroom p {
+    margin: .34133333rem 0;
+    font-size: .512rem;
+    padding: 0 .17066667rem;
+    line-height: 1;
+    color: #28354c;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap
+}
+
+.private-article-combo-classroom .title {
+    font-size: .59733333rem
+}
+
+.private-article-combo-classroom .des {
+    color: #9d9ea7
+}
+
+.private-article-combo-classroom .des .price {
+    float: right;
+    color: #ff695c
+}
+
+.private-article-combo-classroom--content {
+    position: relative;
+    width: 100%;
+    height: 4.864rem
+}
+
+.private-article-combo-classroom--content.layout-scroll {
+    height: 4.56533333rem;
+    width: 7.25333333rem
+}
+
+.private-article-combo-classroom--content > :first-child {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    border-top-right-radius: .21333333rem;
+    border-top-left-radius: .21333333rem
+}
+
+.private-article-combo-classroom--content-icon {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 1.792rem;
+    height: 1.792rem;
+    margin: -.896rem 0 0 -.896rem
+}
+
+.private-article-combo-classroom--content-icon.layout-scroll {
+    width: 1.36533333rem;
+    height: 1.36533333rem;
+    margin: -.68266667rem 0 0 -.68266667rem
+}
+
+.private-article-combo-classroom--content-text {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: .93866667rem;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+    -webkit-flex-direction: row-reverse;
+    -ms-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+    padding: 0 .21333333rem;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(0, 0, 0, .4)));
+    background: -webkit-linear-gradient(top, transparent, rgba(0, 0, 0, .4));
+    background: linear-gradient(180deg, transparent, rgba(0, 0, 0, .4));
+    font-size: .59733333rem;
+    color: #fff
+}
+
+.private-article-combo-classroom--content-text span {
+    height: .93866667rem;
+    line-height: .93866667rem;
+    border: 1px solid transparent;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    overflow: hidden;
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    white-space: normal
+}
+
+.private-article-combo-classroom--content-text span:last-child {
+    margin-left: .21333333rem;
+    -webkit-flex-shrink: 0;
+    -ms-flex-negative: 0;
+    flex-shrink: 0
+}
+
+.private-article-combo-classroom--content-tag {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 .21333333rem 0 .34133333rem;
+    border-bottom-left-radius: .42666667rem;
+    border-top-right-radius: .21333333rem;
+    line-height: .68266667rem;
+    border: 1px solid transparent;
+    font-size: .42666667rem;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #fff
+}
+
+.private-article-combo-classroom--content-info {
+    font-size: .512rem;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    color: #83889a;
+    padding: 0 .17066667rem .256rem;
+    width: 100%
+}
+
+.private-article-combo-classroom--content-info span:first-child {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap
+}
+
+.private-article-combo-classroom--content-info span:last-child {
+    color: #ff695c
+}
+
+.hospital-index-video {
+    padding: 0 .512rem;
+    margin: 1.62133333rem 0;
+    color: #28354c
+}
+
+.hospital-index-video dt {
+    line-height: 1;
+    font-size: .93866667rem;
+    font-weight: 600
+}
+
+.hospital-index-video dd {
+    line-height: 1;
+    margin-top: 1.024rem;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between
+}
+
+.hospital-index-notice, .hospital-index-video dd {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex
+}
+
+.hospital-index-notice {
+    width: 100%;
+    border-top: 1px solid #ebecf1;
+    border-bottom: 1px solid #ebecf1;
+    background: #fff
+}
+
+.hospital-index-notice--icon {
+    display: inline-block;
+    width: 1.83466667rem;
+    height: .93866667rem;
+    margin-top: .384rem;
+    background: url(https://static.guahao.cn/front/portal-h5-node/notice.f1c7061a9a092c20ac747b25a4a3ac72.png) no-repeat;
+    background-size: .81066667rem .93866667rem;
+    background-position: 50%;
+    position: relative
+}
+
+.hospital-index-notice--icon:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 1px;
+    height: .93866667rem;
+    background: #eee
+}
+
+.hospital-index-notice--content {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    font-size: .512rem;
+    color: #83889a;
+    position: relative;
+    height: 1.70666667rem
+}
+
+.hospital-index-notice--content pre {
+    display: inline-block;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-family: Hiragino Sans GB, Microsoft YaHei, \\5FAE\8F6F\96C5\9ED1, \\5B8B\4F53, Arial, Verdana, sans-serif
+}
+
+.hospital-index-notice--content i {
+    float: left;
+    width: .21333333rem;
+    height: .21333333rem;
+    background: #c4c5ce;
+    margin-top: .74666667rem;
+    margin-left: .512rem;
+    margin-right: .21333333rem
+}
+
+.hospital-index-notice--content.overflow {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    height: 1.70666667rem;
+    line-height: 1.70666667rem
+}
+
+.hospital-index-notice--content.show {
+    padding: .42666667rem 0;
+    line-height: .85333333rem;
+    height: auto
+}
+
+.hospital-index-notice--content.show i {
+    margin-top: .32rem
+}
+
+.hospital-index-notice--btn {
+    width: 1.536rem;
+    height: 100%;
+    text-align: center;
+    position: relative
+}
+
+.hospital-index-notice--btn b {
+    position: absolute;
+    left: .59733333rem;
+    top: .59733333rem;
+    width: .34133333rem;
+    height: .34133333rem;
+    border-left: .08533333rem solid #c4c5ce;
+    border-bottom: .08533333rem solid #c4c5ce;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg)
+}
+
+.hospital-index-notice--btn b.show {
+    -webkit-transform: rotate(135deg);
+    transform: rotate(135deg);
+    top: .72533333rem
+}
+
+.private-comment-item {
+    overflow: hidden;
+    margin-top: .42666667rem;
+    padding: 0 .512rem
+}
+
+.private-comment-item--content {
+    color: #28354c;
+    font-size: .59733333rem;
+    line-height: .85333333rem;
+    padding: .21333333rem 0 .34133333rem
+}
+
+.private-comment-item--top {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex
+}
+
+.private-comment-item--patient {
+    margin-right: 4px
+}
+
+.private-comment-item--disease {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    font-size: .59733333rem;
+    color: #3f86ff;
+    text-align: right;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap
+}
+
+.private-comment-item--footer {
+    font-size: .512rem;
+    color: #a6a8b6;
+    padding-bottom: .64rem
+}
+
+.private-comment-item--rate {
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex
+}
+
+.private-hospital-index-comment {
+    background: #fff;
+    margin: 2.048rem 0
+}
+
+.private-hospital-index-comment .all-comment {
+    border: 1px solid #a6a8b6;
+    border-radius: 15px;
+    padding: .21333333rem .768rem;
+    display: inline-block;
+    color: #28354c;
+    margin-left: 50%;
+    -webkit-transform: translate(-50%);
+    transform: translate(-50%)
+}
+
+.private-hospital-index-comment--top {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    line-height: 1.152rem;
+    padding: 0 .512rem .85333333rem
+}
+
+.private-hospital-index-comment--name {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    font-size: .93866667rem;
+    font-weight: 600;
+    color: #28354c
+}
+
+.private-hospital-index-comment--target {
+    font-size: .59733333rem
+}
+
+.private-hospital-index-comment--target b {
+    display: inline-block;
+    width: .34133333rem;
+    height: .34133333rem;
+    border-top: .08533333rem solid #c4c5ce;
+    border-right: .08533333rem solid #c4c5ce;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg)
+}
+
+.private-hospital-index-comment--list {
+    font-size: 0;
+    padding: .29866667rem .512rem 0
+}
+
+.private-hospital-index-comment--list li {
+    display: inline-block;
+    border-radius: 4.26666667rem;
+    padding: .256rem .46933333rem;
+    text-align: center;
+    background: #f5f6f6;
+    color: #83889a;
+    font-size: .512rem;
+    margin-bottom: .256rem;
+    margin-right: .256rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap
+}
+
+.privite-hospital-index {
+    padding-bottom: .42666667rem;
+    background: #fff
+}
+
+.privite-hospital-index--search-icon {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin-right: .42666667rem;
+    background: url(https://static.guahao.cn/front/portal-h5-node/header_search.5ef80d69dabad451163cc09c2e88e11e.png) no-repeat;
+    background-size: 100% 100%
+}
+
+.privite-hospital-index--header-icon {
+    margin-right: .256rem
+}
+
+.privite-hospital-index--notice-dialog {
+    width: 100%;
+    overflow: hidden;
+    background: #fff;
+    border-radius: .512rem;
+    padding: .17066667rem 0 .04266667rem;
+    position: relative
+}
+
+.privite-hospital-index--notice-dialog h3 {
+    line-height: 2.048rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: center;
+    font-size: .68266667rem;
+    color: #28354c
+}
+
+.privite-hospital-index--notice-content {
+    max-height: 8.02133333rem;
+    overflow-y: auto;
+    padding: 0 .85333333rem
+}
+
+.privite-hospital-index--notice-content pre {
+    font-size: .59733333rem;
+    color: #83889a;
+    text-align: left;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-family: Hiragino Sans GB, Microsoft YaHei, \\5FAE\8F6F\96C5\9ED1, \\5B8B\4F53, Arial, Verdana, sans-serif;
+    overflow: auto
+}
+
+.privite-hospital-index--notice-btn {
+    margin-top: .64rem;
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    line-height: 1.62133333rem;
+    text-align: center;
+    font-size: .68266667rem;
+    color: #3f86ff;
+    border-top: 1px solid #ebecf1
+}
+
+.privite-hospital-index--empty-icon {
+    display: block;
+    width: 2.56rem;
+    height: 2.56rem;
+    margin: 2.85866667rem auto 0;
+    background: url(https://static.guahao.cn/front/portal-h5-node/icon_notfound.f10d592e5157da08c01cb153183fb124.png) no-repeat;
+    background-size: 100% 100%
+}
+
+.privite-hospital-index--empty-text {
+    font-size: .68266667rem;
+    margin-top: 1.024rem;
+    color: #bdbdbd;
+    text-align: center
+}
+
+.privite-hospital-index--empty-link {
+    text-align: center;
+    font-size: .68266667rem;
+    display: block;
+    line-height: 1.92rem;
+    height: 1.92rem;
+    letter-spacing: .08533333rem;
+    margin: 2.56rem 1.70666667rem 0;
+    padding: 0 .42666667rem;
+    border-radius: 1.70666667rem;
+    color: #fff;
+    background-color: #2f7fe2
+}
+
+.hospital301-index i {
+    font-style: normal
+}
+
+.hospital301-index--banner {
+    height: 5.12rem
+}
+
+.hospital301-index--banner img {
+    display: block;
+    width: 100%;
+    height: 5.12rem;
+    -o-object-fit: cover;
+    object-fit: cover
+}
+
+.hospital301-index--introduce {
+    margin-top: -1px;
+    padding: .512rem;
+    width: 100%;
+    height: 2.64533333rem;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-bottom: .34133333rem;
+    background: #fff
+}
+
+.hospital301-index--introduce-title {
+    float: left;
+    height: 100%
+}
+
+.hospital301-index--introduce-title div h3 {
+    font-size: .59733333rem;
+    color: #28354c;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: .17066667rem
+}
+
+.hospital301-index--introduce-title div i {
+    font-size: .512rem;
+    color: #ff695c;
+    border: 1px solid #ff695c;
+    border-radius: 4.26666667rem;
+    width: 1.536rem;
+    height: .68266667rem;
+    line-height: .68266667rem;
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle
+}
+
+.hospital301-index--introduce-title p span {
+    font-size: .512rem;
+    color: #83889a;
+    margin-right: .256rem
+}
+
+.hospital301-index--introduce-details {
+    float: right;
+    height: 100%
+}
+
+.hospital301-index--introduce-details a {
+    height: 1.62133333rem;
+    line-height: 1.62133333rem;
+    font-size: .512rem;
+    display: inline-block;
+    color: #83889a
+}
+
+.hospital301-index--introduce-details a i {
+    width: .512rem;
+    background: url(https://static.guahao.cn/front/portal-h5-node/arrow.40630ab6c79fe107e271f5a899ccc267.png) 50% no-repeat;
+    background-size: .256rem .512rem;
+    height: 1.62133333rem;
+    display: block;
+    float: right;
+    line-height: 1.62133333rem
+}
+
+.hospital301-index--nav {
+    height: 8.96rem;
+    background: #fff;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    text-align: center;
+    width: 100%
+}
+
+.hospital301-index--nav .cycle {
+    display: block;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    border-right: 1px solid #eee
+}
+
+.hospital301-index--nav .cycle img:first-child {
+    margin-top: 1.49333333rem;
+    width: 4.01066667rem
+}
+
+.hospital301-index--nav .cycle p:nth-child(2) {
+    margin-bottom: .768rem
+}
+
+.hospital301-index--nav .cycle p:last-child {
+    margin-top: .512rem
+}
+
+.hospital301-index--nav .cycle p {
+    font-size: .512rem;
+    color: #83889a
+}
+
+.hospital301-index--nav .cycle p i {
+    color: #4294fe
+}
+
+.hospital301-index--nav .nav {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column
+}
+
+.hospital301-index--nav .nav nav {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center
+}
+
+.hospital301-index--nav .nav nav img {
+    width: 1.28rem;
+    float: left;
+    margin: .85333333rem .512rem 0 .85333333rem
+}
+
+.hospital301-index--nav .nav nav a {
+    height: 100%;
+    overflow: hidden;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center
+}
+
+.hospital301-index--nav .nav nav a p {
+    text-align: left;
+    white-space: nowrap
+}
+
+.hospital301-index--nav .nav nav a p:first-child {
+    font-size: .59733333rem;
+    color: #28354c
+}
+
+.hospital301-index--nav .nav nav a p:nth-child(2) {
+    font-size: .512rem;
+    color: #83889a
+}
+
+.hospital301-index--nav .nav nav:nth-child(2) {
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee
+}
+
+.hospital301-index--registration {
+    margin-top: .34133333rem;
+    background-color: #fff;
+    height: 2.98666667rem;
+    width: 100%
+}
+
+.hospital301-index--registration img {
+    width: 1.28rem;
+    float: left;
+    margin: .85333333rem .768rem 0 .68266667rem
+}
+
+.hospital301-index--registration div {
+    height: 100%;
+    overflow: hidden;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center
+}
+
+.hospital301-index--registration div p {
+    text-align: left
+}
+
+.hospital301-index--registration div p:first-child {
+    font-size: .59733333rem;
+    color: #28354c
+}
+
+.hospital301-index--registration div p:nth-child(2) {
+    font-size: .512rem;
+    color: #83889a
+}
+
+.hospital-index {
+    padding-bottom: .42666667rem
+}
+
+.hospital--search-icon {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin-right: .42666667rem;
+    background: url(https://static.guahao.cn/front/portal-h5-node/header_search.5ef80d69dabad451163cc09c2e88e11e.png) no-repeat;
+    background-size: 100% 100%
+}
+
+.hospital--header-icon {
+    margin-right: .256rem
+}
+
+.hospital--empty-icon {
+    display: block;
+    width: 2.56rem;
+    height: 2.56rem;
+    margin: 2.85866667rem auto 0;
+    background: url(https://static.guahao.cn/front/portal-h5-node/icon_notfound.f10d592e5157da08c01cb153183fb124.png) no-repeat;
+    background-size: 100% 100%
+}
+
+.hospital--empty-text {
+    font-size: .68266667rem;
+    margin-top: 1.024rem;
+    color: #bdbdbd;
+    text-align: center
+}
+
+.hospital--empty-link {
+    text-align: center;
+    font-size: .68266667rem;
+    display: block;
+    line-height: 1.92rem;
+    height: 1.92rem;
+    letter-spacing: .08533333rem;
+    margin: 2.56rem 1.70666667rem 0;
+    padding: 0 .42666667rem;
+    border-radius: 1.70666667rem;
+    color: #fff;
+    background-color: #2f7fe2
+}
+
+.x-img-fadein[lazy=loaded], .x-img-fadein[normal=loaded] {
+    -webkit-animation-duration: .6s;
+    animation-duration: .6s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn
+}
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0
+    }
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0
+    }
+    to {
+        opacity: 1
+    }
+}
+
+.hospital-summary-introduce {
+    background: #fff
+}
+
+.hospital-summary-introduce .info {
+    padding: .29733333rem .312rem;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    position: relative
+}
+
+.hospital-summary-introduce .info .left {
+    width: 3.06666667rem;
+    height: 1.99rem;
+    margin-right: .512rem
+}
+
+.hospital-summary-introduce .info .left img {
+    width: 100%;
+    height: 100%;
+    border-radius: .08533333rem;
+    background: url(https://static.guahao.cn/front/portal-h5-node/hospital.3e76f8af44689337ba6552dc367d8dce.png) no-repeat;
+    background-size: 100%;
+    background-position: 50%
+}
+
+.hospital-summary-introduce .info .right {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    white-space: nowrap;
+    font-family: PingFangSC
+}
+
+.hospital-summary-introduce .info .right .name {
+    font-family: PingFangSC-Medium;
+    font-size: .43266667rem;
+    color: #28354c;
+    font-weight: bolder;
+    text-align: left;
+    white-space: normal;
+    line-height: 1.10933333rem;
+    margin-bottom: .21333333rem
+}
+
+.hospital-summary-introduce .info .right .labels {
+    color: #83889a;
+    font-size: .39733333rem;
+    line-height: .30733333rem;
+    margin-bottom: .22666667rem
+}
+
+.hospital-summary-introduce .info .right .labels label {
+    margin-right: .32666667rem
+}
+
+.hospital-summary-introduce .info .right .level {
+    width: 1.56rem;
+    text-align: center;
+    height: .58266667rem;
+    font-size: .312rem;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: #ff695c;
+    line-height: .48266667rem;
+    background: rgba(255, 105, 92, .12);
+    border-radius: .34133333rem;
+    padding: 0 .08533333rem
+}
+
+.hospital-summary-introduce .address {
+    overflow: hidden;
+    padding: .284rem .55333333rem .284rem .312rem;
+    border: .02133333rem solid #eee;
+    margin-bottom: .24133333rem;
+    min-height: 1.36533333rem;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    font-size: 0.4rem;
+}
+
+.hospital-summary-introduce .address .detail {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1
+}
+
+.hospital-summary-introduce .address .detail, .hospital-summary-introduce .address .detail a {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center
+}
+
+.hospital-summary-introduce .address .detail .icon {
+    margin-right: .34133333rem;
+    background: url(https://static.guahao.cn/front/portal-h5-node/map.1792150531553061b93f9d6d8020dbf5.png) no-repeat;
+    background-size: 100%;
+    background-position: 50%;
+    display: inline-block;
+    width: .55466667rem;
+    height: .68266667rem
+}
+
+.hospital-summary-introduce .address .map {
+    border-left: .02133333rem solid #eee;
+    color: #3f86ff;
+    font-weight: 400;
+    padding-left: .85333333rem;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center
+}
+
+.hospital-summary-info {
+    overflow: hidden;
+    background-color: #fff;
+    -webkit-box-shadow: 0 .04266667rem 0 0 #ebecf1;
+    box-shadow: 0 .04266667rem 0 0 #ebecf1;
+    padding: 0.44rem .512rem .59733333rem;
+    font-size: 0.4rem;
+}
+
+.hospital-summary-info .hospital-summary-info--part {
+    margin-bottom: 1.024rem;
+    position: relative
+}
+
+.hospital-summary-info .hospital-summary-info--part .trapezoid {
+    position: absolute;
+    top: .128rem;
+    left: -.512rem;
+    width: .02133333rem;
+    height: .17066667rem;
+    padding: .1em .15em .6em;
+    background-color: #3f86ff;
+    -webkit-transform: perspective(1em) rotateY(30deg);
+    transform: perspective(1em) rotateY(30deg)
+}
+
+.hospital-summary-info .hospital-summary-info--part .title {
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin-bottom: .42666667rem
+}
+
+.hospital-summary-info .hospital-summary-info--part .title .name {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    width: 2.73066667rem;
+    height: .85333333rem;
+    font-size: .48266667rem;
+    font-family: PingFangSC-Medium;
+    font-weight: bolder;
+    color: #28354c;
+    line-height: .85333333rem
+}
+
+.hospital-summary-info .hospital-summary-info--part .title .open {
+    color: #83889a;
+    font-size: .59733333rem;
+    margin-right: .42666667rem
+}
+
+.hospital-summary-info .hospital-summary-info--part .title .down-icon, .hospital-summary-info .hospital-summary-info--part .title .left-icon, .hospital-summary-info .hospital-summary-info--part .title .up-icon {
+    color: #c4c5ce;
+    position: relative;
+    top: .17066667rem;
+    width: .27733333rem;
+    height: .27733333rem;
+    border-left: .08533333rem solid #c4c5ce !important;
+    border-bottom: .08533333rem solid #c4c5ce !important
+}
+
+.hospital-summary-info .hospital-summary-info--part .title .down-icon {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg)
+}
+
+.hospital-summary-info .hospital-summary-info--part .title .left-icon {
+    -webkit-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+    top: .29866667rem
+}
+
+.hospital-summary-info .hospital-summary-info--part .title .up-icon {
+    top: .42666667rem;
+    -webkit-transform: rotate(135deg);
+    transform: rotate(135deg)
+}
+
+.hospital-summary-info .hospital-summary-info--part .content .wrap {
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    line-height: .93866667rem;
+    font-weight: 400;
+    color: #28354c
+}
+
+.hospital-summary-info .hospital-summary-info--part .content .ellipsis-line {
+    overflow: hidden;
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    white-space: normal
+}
+
+.hospital-summary-info .hospital-summary-info--part .content ul {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap
+}
+
+.hospital-summary-info .hospital-summary-info--part .content ul li:first-child {
+    border: 0;
+    font-size: .39733333rem;
+    background: 0;
+    margin-right: .21333333rem
+}
+
+.hospital-summary-info .hospital-summary-info--part .content ul li:first-child .circle {
+    display: inline-block;
+    position: relative;
+    left: -.17066667rem;
+    top: -.04266667rem;
+    width: .256rem;
+    height: .256rem;
+    border-radius: 50%;
+    margin-right: .17066667rem;
+    border-width: .08533333rem !important
+}
+
+.hospital-summary-info .hospital-summary-info--part .content ul li:first-child span {
+    color: #83889a !important
+}
+
+.hospital-summary-info .hospital-summary-info--part .content ul li:first-child .red {
+    background: rgba(255, 105, 92, .25);
+    border: .08533333rem solid #ff695c
+}
+
+.hospital-summary-info .hospital-summary-info--part .content ul li:first-child .yellow {
+    background: rgba(254, 183, 15, .25);
+    border: .08533333rem solid #feb70f
+}
+
+.hospital-summary-info .hospital-summary-info--part .content ul li:first-child .green {
+    background: rgba(2, 208, 129, .25);
+    border: .08533333rem solid #02d081
+}
+
+.hospital-summary-info .hospital-summary-info--part .content ul li:first-child .blue {
+    background: rgba(63, 134, 255, .25);
+    border: .08533333rem solid #3f86ff
+}
+
+.hospital-summary-info .hospital-summary-info--part .content ul a {
+    min-width: 1.56rem;
+    border-radius: 4.26666667rem;
+    border: .04266667rem solid #a4c5e3;
+    background-color: #f3faff;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    margin: .34133333rem .21333333rem;
+    white-space: nowrap;
+    position: relative;
+    height: 0.60933333rem;
+    padding: 0 .21333333rem
+}
+
+.hospital-summary-info .hospital-summary-info--part .content ul a li {
+    width: 100%;
+    height: 0.824rem;
+    line-height: .624rem;
+    color: #28354c !important;
+    font-size: .312rem !important;
+    font-weight: 400
+}
+
+.g-navigation {
+    padding: .512rem
+}
+
+.g-navigation .g-navigation--breadcrumb {
+    font-size: .512rem;
+    color: #a6a8b6
+}
+
+.g-navigation .g-navigation--breadcrumb a {
+    color: #a6a8b6
+}
+
+.g-navigation .g-navigation--breadcrumb a:after {
+    content: ">";
+    display: inline-block;
+    font-size: .512rem;
+    margin-left: .21333333rem;
+    margin-right: .08533333rem;
+    color: #d1d3db
+}
+
+.g-navigation .g-navigation--nav {
+    margin-top: .85333333rem;
+    text-align: center
+}
+
+.g-navigation .g-navigation--nav p {
+    font-size: .512rem
+}
+
+.g-navigation .g-navigation--nav p a {
+    display: inline-block;
+    margin-left: .34133333rem;
+    padding-right: .34133333rem;
+    border-right: 1px solid #b0b0b0;
+    color: #b0b0b0;
+    line-height: .59733333rem
+}
+
+.g-navigation .g-navigation--nav p a:last-child {
+    border-right: none
+}
+
+.g-navigation .g-navigation--nav img {
+    display: block;
+    width: 2.56rem;
+    margin: .42666667rem auto
+}
+
+.g-navigation .g-navigation--copyright {
+    line-height: .85333333rem;
+    text-align: center;
+    font-size: .46933333rem;
+    color: #b0b0b0
+}

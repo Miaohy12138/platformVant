@@ -7,6 +7,7 @@
 <script>
   import { setCookie,getCookie,delCookie } from './assets/js/cookie.js'
   import rem from './rem/rem.js'
+  import styles from './assets/css/hospital.css'
   export default {
     name: 'app',
     data(){

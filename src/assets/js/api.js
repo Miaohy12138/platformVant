@@ -110,6 +110,13 @@ export default {
   },
   getHospitalDetail:params=>{
     return apppost('/hospital/detail',params);
+  },
+  //医生相关
+  getDoctorList:params=>{
+    return apppost('/doctor/list',params);
+  },
+  getDoctorDetail:params=>{
+    return apppost('/doctor/detail',params);
   }
 }
 
