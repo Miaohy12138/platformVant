@@ -121,6 +121,9 @@ export default {
   //科室相关
   getDepartmentByIds:params=>{
     return apppost('/department/getByIds',params);
+  },
+  getDepartmentDetail:params=>{
+    return apppost('/department/detail',params);
   }
 }
 

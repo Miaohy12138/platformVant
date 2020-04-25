@@ -5,143 +5,79 @@
             :active-id.sync="activeId"
             :main-active-index.sync="activeIndex"
             height="20rem"
+            @click-item="goDetail"
     />
   </div>
 </template>
 
 <script>
   import API from "../../assets/js/api"
+
   export default {
     name: "department_list",
-    data(){
+    data() {
       return {
-        items:[
-          {
-            // 导航名称
-            text: '推荐科室',
-            // 导航名称右上角徽标，2.5.6 版本开始支持
-            badge: 3,
-            // 是否在导航名称右上角显示小红点
-            dot: true,
-            // 导航节点额外类名
-            className: 'pop-deparment',
-            // 该导航下所有的可选项
-            children: [
-              {
-                // 名称
-                text: '温州',
-                // id，作为匹配选中状态的标识符
-                id: 1,
-                // 禁用选项
-                //disabled: true,
-              },
-              {
-                text: '杭州',
-                id: 2,
-              },
-            ],
-          },
-          {
-            // 导航名称
-            text: '内科',
-            // 导航名称右上角徽标，2.5.6 版本开始支持
-            //badge: 3,
-            // 是否在导航名称右上角显示小红点
-            //dot: true,
-            // 导航节点额外类名
-            className: 'neike',
-            // 该导航下所有的可选项
-            children: [
-              {
-                // 名称
-                text: '温州',
-                // id，作为匹配选中状态的标识符
-                id: 1,
-                // 禁用选项
-                //disabled: true,
-              },
-              {
-                text: '杭州',
-                id: 2,
-              },
-              {
-                text: '杭州',
-                id: 3,
-              },
-              {
-                text: '杭州',
-                id: 4,
-              },
-              {
-                text: '杭州',
-                id: 5,
-              },
-              {
-                text: '杭州',
-                id: 6,
-              },
-              {
-                text: '杭州',
-                id: 7,
-              },
-              {
-                text: '杭州',
-                id: 8,
-              },
-            ],
-          },
+        items: [
         ],
         activeId: 1,
         activeIndex: 0,
-        departmentIds:""
+        departmentIds: ""
       }
     },
-    components:{
-
-    },
-    mounted(){
+    components: {},
+    mounted() {
       let departmentIds = this.$route.params.departmentIds;
       this.departmentIds = departmentIds;
       this.getDepartments(departmentIds);
     },
-    methods:{
-      getDepartments(departmentIds){
+    methods: {
+      getDepartments(departmentIds) {
         let pdata = {
-          ids:departmentIds
+          ids: departmentIds,
+          hospitalId:this.$route.params.id
         };
-        API.getDepartmentByIds(pdata).then(res=>{
+        API.getDepartmentByIds(pdata).then(res => {
           let departments = res.data.data.departments;
-          // this.items.push( {
-          //
-          //   text:   ,
-          //   // 导航名称右上角徽标，2.5.6 版本开始支持
-          //   badge: 3,
-          //   // 是否在导航名称右上角显示小红点
-          //   dot: true,
-          //   // 导航节点额外类名
-          //   className: 'pop-deparment',
-          //   // 该导航下所有的可选项
-          //   children: [
-          //     {
-          //       // 名称
-          //       text: '温州',
-          //       // id，作为匹配选中状态的标识符
-          //       id: 1,
-          //       // 禁用选项
-          //       //disabled: true,
-          //     },
-          //     {
-          //       text: '杭州',
-          //       id: 2,
-          //     },
-          //   ],
-          // })
-          //let json2map= JSON.parse(departments);
-          console.log(departments);
-          for(let item in departments){
-            let ds = json2map.get(item);
-            console.log(ds);
+          for (let item in departments) {
+            let pdata = {
+              id: item
+            };
+            let department = "";
+            let option = {
+
+              text: "",
+              // 导航名称右上角徽标，2.5.6 版本开始支持
+              // 是否在导航名称右上角显示小红点
+              dot: false,
+              // 导航节点额外类名
+              className: 'pop-deparment',
+              // 该导航下所有的可选项
+              children: [
+
+              ]
+            };
+            API.getDepartmentDetail(pdata).then(res => {
+              department = res.data.data.department;
+              option.text = department.name
+            });
+
+            let s = departments[item];
+            for (let i = 0;i<s.length;i++) {
+              let d= s[i];
+              option.children.push( {
+                text:  d.name,
+                id: d.id
+              })
+            }
+            this.items.push(option);
           }
+        })
+      },
+      goDetail(index){
+        let hospitalId = this.$route.params.id;
+        let departmentId = index.id;
+        this.$router.push("/department_doctor/"+hospitalId+"/"+departmentId).catch(err=>{
+
         })
       }
     }
@@ -154,6 +90,7 @@
     font-weight: 500;
     border-color: pink;
   }
+
   .van-tree-select__item--active {
     color: blue;
   }

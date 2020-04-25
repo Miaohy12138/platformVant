@@ -49,7 +49,7 @@ import hospital_page from "../views/hospital/hospital_page"
 //医生
 import doctor_list from "../views/search/doctor_list";
 //科室
-
+import department_doctor from "../views/department/department_doctor";
 import department_list from "../views/department/department_list"
 //test
 import contact from "../views/user/children/contact";
@@ -66,35 +66,12 @@ const routes = [
     name: 'main',
     component: main,
     children: [
-      {
-        path: 'visitperson',
-        name: 'visitperson',
-        component: visitperson
-      },
-      {
-        path: 'add_visitperson',
-        name:'add_visitperson',
-        component: add_visitperson
-      },
-      {
-        path:'edit_visitperson/:id',
-        component:edit_visitperson
-      },
-      {
-        path: 'upaddress',
-        name: '/main/upaddress',
-        component: upaddress
-      },
-      {
-        path: 'cart',
-        name: 'cart',
-        component: cart
-      },
-      {
-        path:'userinfo',
-        name:'/main/userinfo',
-        component: userinfo
-      }
+      {path: 'visitperson', name: 'visitperson', component: visitperson},
+      {path: 'add_visitperson', name:'add_visitperson', component: add_visitperson},
+      {path:'edit_visitperson/:id', component:edit_visitperson},
+      {path: 'upaddress', name: '/main/upaddress', component: upaddress},
+      {path: 'cart', name: 'cart', component: cart},
+      {path:'userinfo',name:'/main/userinfo',component: userinfo}
     ]
   },
   {path: '/collection', name: 'collection', component: collection},
@@ -118,7 +95,8 @@ const routes = [
   {path:'/doctor_list/:name',name:'doctor_list',component:doctor_list},
   {path:'/hospital_home/:id',name:'hospital_home',component:hospital_home},
   {path:'/hospital_page/:id/:departmentIds',name:'hospital_page',component:hospital_page},
-  {path:'/department_list/:id/:departmentIds',name:'department_list',component:department_list}
+  {path:'/department_list/:id/:departmentIds',name:'department_list',component:department_list},
+  {path:'/department_doctor/:hospitalId/:departmentId/',name:'department_doctor',component:department_doctor}
 ];
 
 const router = new VueRouter({
