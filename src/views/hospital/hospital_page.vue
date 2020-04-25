@@ -39,7 +39,7 @@
           <div class="trapezoid"></div>
           <div class="title">
             <div class="name">重点科室</div>
-            <a href="https://wy.guahao.com/hospital/depts/139718209241750000">
+            <a @click="goDepartmentList">
               <div class="left-icon"></div>
             </a>
           </div>
@@ -93,7 +93,8 @@
     name: "hospital_page",
     data(){
       return {
-        hospital:""
+        hospital:"",
+        departmentIds:""
       }
     },
     components:{
@@ -101,6 +102,8 @@
     },
     mounted() {
       let id = this.$route.params.id;
+      let departmentIds = this.$route.params.departmentIds;
+      this.departmentIds = departmentIds;
       let pdata = {
         id:id
       };
@@ -111,6 +114,12 @@
     methods:{
       back(){
         this.$router.back(-1);
+      },
+      goDepartmentList(){
+        let hospitalId = this.$route.params.id;
+        this.$router.push("/department_list/"+hospitalId+"/"+this.departmentIds).catch(err=>{
+
+        })
       }
     }
   }

@@ -117,6 +117,10 @@ export default {
   },
   getDoctorDetail:params=>{
     return apppost('/doctor/detail',params);
+  },
+  //科室相关
+  getDepartmentByIds:params=>{
+    return apppost('/department/getByIds',params);
   }
 }
 

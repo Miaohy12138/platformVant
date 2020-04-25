@@ -48,6 +48,9 @@ import hospital_home from "../views/hospital/hospital_home"
 import hospital_page from "../views/hospital/hospital_page"
 //医生
 import doctor_list from "../views/search/doctor_list";
+//科室
+
+import department_list from "../views/department/department_list"
 //test
 import contact from "../views/user/children/contact";
 import main2 from "../views/user/main2";
@@ -114,7 +117,8 @@ const routes = [
   {path:'/hospital_list/:name',name:'hospital_list',component:hospital_list},
   {path:'/doctor_list/:name',name:'doctor_list',component:doctor_list},
   {path:'/hospital_home/:id',name:'hospital_home',component:hospital_home},
-  {path:'/hospital_page/:id',name:'hospital_page',component:hospital_page},
+  {path:'/hospital_page/:id/:departmentIds',name:'hospital_page',component:hospital_page},
+  {path:'/department_list/:id/:departmentIds',name:'department_list',component:department_list}
 ];
 
 const router = new VueRouter({

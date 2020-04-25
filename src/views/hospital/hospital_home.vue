@@ -72,6 +72,7 @@ import API from "../../assets/js/api"
 
         },
         hospitalId:0,
+        departmentIds:""
       }
     },
     components:{
@@ -85,8 +86,8 @@ import API from "../../assets/js/api"
       };
       API.getHospitalDetail(pdata).then(res=>{
           this.hospital = res.data.data.hospital;
+          this.departmentIds = this.hospital.departments
       })
-
     },
     methods:{
       async clickleft(){
@@ -96,9 +97,17 @@ import API from "../../assets/js/api"
 
       },
        goPage(){
-         this.$router.push("/hospital_page/" + this.hospitalId)
+         this.$router.push("/hospital_page/" + this.hospitalId+"/"+this.departmentIds)
           .catch(err=>{
-
+        })
+      },
+      getDepartments(){
+        let pdata = {
+          ids:this.departmentIds
+        }
+        API.getDepartmentByIds(pdata).then(res=>{
+          let departments = res.data.data.departments;
+          console.log(departments);
         })
       }
     },
