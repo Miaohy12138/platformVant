@@ -1,0 +1,498 @@
+.we-cell {
+    background-color: #fff
+}
+
+.we-cell .we-cell--content {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 44px;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    font-size: 14px
+}
+
+.we-cell .we-cell--content .we-cell--item-left {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-self: stretch;
+    -ms-flex-item-align: stretch;
+    align-self: stretch;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center
+}
+
+.we-cell .we-cell--content .we-cell--item-left .iconfont {
+    margin-right: 8px;
+    font-size: 14px
+}
+
+.we-cell .we-cell--content .we-cell--item-right {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-self: stretch;
+    -ms-flex-item-align: stretch;
+    align-self: stretch;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center
+}
+
+.we-cell .we-cell--content .we-cell--item-right .we-icon-more {
+    color: #999;
+    font-size: 18px
+}
+
+.we-cell .we-cell--content .we-cell--text-desc {
+    color: #999
+}
+
+.we-button {
+    position: relative;
+    outline: 0;
+    border-width: 0;
+    text-align: center;
+    border-radius: 5px
+}
+
+.we-button.we-button-type-primary {
+    background-color: #3f86ff;
+    color: #fff
+}
+
+.we-button.we-button-type-primary:active {
+    background-color: #3371d9
+}
+
+.we-button.we-button-type-warn {
+    background-color: #707c93;
+    color: #fff
+}
+
+.we-button.we-button-type-warn:active {
+    background-color: #677287
+}
+
+.we-button.we-button-type-disabled {
+    background-color: #d1d3db;
+    color: #fff
+}
+
+.we-button.we-button-type-default {
+    border: 1px solid #dedede;
+    background-color: #f7faff;
+    color: #707c93
+}
+
+.we-button.we-button-type-default:active {
+    background-color: #e4e6eb
+}
+
+.we-button.we-button-type-error {
+    background-color: #ff695c;
+    color: #fff
+}
+
+.we-button.we-button-type-error:active {
+    background-color: #e96258
+}
+
+.we-button.we-button-size-large {
+    display: block;
+    width: 100%;
+    height: 45px;
+    font-size: 16px
+}
+
+.we-button.we-button-size-large .we-button-size-large {
+    width: 100%;
+    height: 45px
+}
+
+.we-button.we-button-size-normal, .we-button.we-button-size-normal .we-button-size-normal {
+    display: inline-block;
+    width: 120px;
+    height: 40px;
+    font-size: 14px
+}
+
+.we-button.we-button-size-small, .we-button.we-button-size-small .we-button-size-small {
+    display: inline-block;
+    width: 60px;
+    height: 24px;
+    font-size: 12px
+}
+
+.we-button.we-button-circle, .we-button.we-button-circle .we-button-circle {
+    border-radius: 100px
+}
+
+.we-button.we-button-plain-type-primary {
+    background-color: #fff;
+    border: 1px solid #3f86ff;
+    color: #3f86ff
+}
+
+.we-button.we-button-plain-type-primary:active {
+    background-color: rgba(0, 0, 0, .08)
+}
+
+.we-button.we-button-plain-type-warn {
+    background-color: #fff;
+    border: 1px solid #707c93;
+    color: #707c93
+}
+
+.we-button.we-button-plain-type-warn:active {
+    background-color: rgba(0, 0, 0, .08)
+}
+
+.we-button.we-button-plain-type-default {
+    background-color: #f7faff;
+    border: 1px solid #dedede;
+    color: #707c93
+}
+
+.we-button.we-button-plain-type-default:active {
+    background-color: rgba(0, 0, 0, .08)
+}
+
+.we-button.we-button-plain-type-disabled {
+    background-color: #fff;
+    border: 1px solid #d1d3db;
+    color: #d1d3db
+}
+
+.we-button.we-button-plain-type-error {
+    background-color: #fff;
+    border: 1px solid #ff695c;
+    color: #ff695c
+}
+
+.we-button.we-button-plain-type-error:active {
+    background-color: rgba(0, 0, 0, .08)
+}
+
+.we-radio .we-radio--item {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 10px;
+    background-color: #fff;
+    border-bottom: 1px solid #eee
+}
+
+.we-radio .we-radio--item.we-radio--select-right {
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between
+}
+
+.we-radio .we-radio--item .we-radio--select {
+    position: relative;
+    -webkit-align-self: center;
+    -ms-flex-item-align: center;
+    align-self: center;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    -webkit-flex-shrink: 0;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    vertical-align: middle
+}
+
+.we-radio .we-radio--item .we-radio--select.we-radio--select-active {
+    border-color: #3f86ff
+}
+
+.we-radio .we-radio--item .we-radio--select.we-radio--select-disable {
+    border-color: #ccc;
+    background-color: #dfdfdf
+}
+
+.we-radio .we-radio--item .we-radio--select.we-radio--select-right {
+    margin-right: 0;
+    -webkit-box-ordinal-group: 2;
+    -webkit-order: 1;
+    -ms-flex-order: 1;
+    order: 1
+}
+
+.we-radio .we-radio--item .we-radio--select input {
+    display: none
+}
+
+.we-radio .we-radio--item .we-radio--select .we-radio--innerPoint {
+    position: relative;
+    top: 10%;
+    margin: 0 auto;
+    width: 12px;
+    height: 12px;
+    display: block;
+    border-radius: 50%;
+    background-color: #3f86ff
+}
+
+.we-radio .we-radio--item .we-radio--select-style-tick {
+    position: relative;
+    -webkit-align-self: center;
+    -ms-flex-item-align: center;
+    align-self: center;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    background-color: #fff;
+    border: 2px solid #ccc;
+    -webkit-flex-shrink: 0;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    border-radius: 50%;
+    vertical-align: middle
+}
+
+.we-radio .we-radio--item .we-radio--select-style-tick.we-radio--select-active {
+    background-color: #3f86ff;
+    border-color: #3f86ff
+}
+
+.we-radio .we-radio--item .we-radio--select-style-tick.we-radio--select-disable {
+    border-color: #ccc;
+    background-color: #dfdfdf
+}
+
+.we-radio .we-radio--item .we-radio--select-style-tick.we-radio--select-right {
+    margin-right: 0;
+    -webkit-box-ordinal-group: 2;
+    -webkit-order: 1;
+    -ms-flex-order: 1;
+    order: 1
+}
+
+.we-radio .we-radio--item .we-radio--select-style-tick input {
+    display: none
+}
+
+.we-radio .we-radio--item .we-radio--select-style-tick .we-radio--innerPoint {
+    position: absolute;
+    top: 4px;
+    left: 3px;
+    margin: 0 auto;
+    width: 8px;
+    height: 4px;
+    display: block;
+    border-left: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg)
+}
+
+.we-radio .we-radio--item .we-radio--label {
+    vertical-align: middle;
+    font-size: 14px;
+    color: #28354c
+}
+
+.x-img-fadein[lazy=loaded], .x-img-fadein[normal=loaded] {
+    -webkit-animation-duration: .6s;
+    animation-duration: .6s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn
+}
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0
+    }
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0
+    }
+    to {
+        opacity: 1
+    }
+}
+
+.g-noresult {
+    padding: 40px 0;
+    text-align: center
+}
+
+.g-noresult a {
+    display: block;
+    height: 115px;
+    width: 115px;
+    margin: 0 auto 20px
+}
+
+.g-noresult a img {
+    width: 100%;
+    height: 100%
+}
+
+.g-noresult h4 {
+    color: #28354c;
+    font-size: 16px;
+    font-weight: 400
+}
+
+.g-noresult p {
+    color: #83889a;
+    font-size: 14px;
+    margin-top: 10px
+}
+
+.g-noresult button {
+    display: inline-block;
+    margin-top: 30px;
+    background-color: #3f86ff;
+    color: #fff;
+    width: 180px;
+    height: 45px;
+    line-height: 45px;
+    border-radius: 100px;
+    font-size: 14px;
+    text-align: center;
+    border: none;
+    outline: none
+}
+
+.booking-patient-list .g-noresult {
+    background: #fff
+}
+
+.booking-patient-list .we-radio--item {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 3.84rem;
+    line-height: 1.024rem
+}
+
+.booking-patient-list .we-radio--innerPoint {
+    margin-top: .04266667rem !important
+}
+
+.booking-patient-list--patient {
+    position: relative;
+    width: 100%;
+    font-size: .352rem;
+    color: #83889a
+}
+
+.booking-patient-list--patient span {
+    margin-right: .24133333rem
+}
+
+.booking-patient-list--patient-meta {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex
+}
+
+.booking-patient-list--patient-name {
+    font-size: .4166667rem;
+    color: #28354c;
+    max-width: 5.12rem;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap
+}
+
+.booking-patient-list--patient-real {
+    background-color: #6dbe41;
+    color: #fff;
+    padding: .128rem .34133333rem;
+    border-radius: .42666667rem;
+    height: .85333333rem;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    line-height: .59733333rem;
+    position: relative;
+    top: .08533333rem
+}
+
+.booking-patient-list--patient button {
+    position: absolute;
+    top: .21333333rem;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    border: .04266667rem solid transparent !important;
+    outline: none;
+    background: transparent !important;
+    height: 2.56rem !important
+}
+
+.booking-patient-list .we-cell--content {
+    height: 2.13333333rem;
+    line-height: 2.13333333rem;
+    background-color: #fff;
+    border-top: .04266667rem solid #eee;
+    border-bottom: .04266667rem solid #eee;
+    display: block;
+    margin-top: .64rem;
+    color: #83889a;
+    font-size: .68266667rem;
+    position: relative
+}
+
+.booking-patient-list .we-cell--item-left {
+    padding-left: .512rem
+}
+
+.booking-patient-list .we-cell--text-title {
+    margin-left: .512rem
+}
+
+.booking-patient-list .we-dialog--container {
+    text-align: center;
+    min-width: .42666667rem;
+    background-color: #fff;
+    border-radius: .21333333rem
+}
+
+.booking-patient-list .we-dialog--container .content p {
+    padding: .85333333rem;
+    color: #83889a;
+    font-size: .68266667rem
+}
+
+.booking-patient-list .we-dialog--container .content span {
+    display: block;
+    padding: .512rem 0;
+    text-align: center;
+    font-size: .68266667rem;
+    border-top: .04266667rem solid #eee
+}

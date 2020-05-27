@@ -124,6 +124,24 @@ export default {
   },
   getDepartmentDetail:params=>{
     return apppost('/department/detail',params);
+  },
+  //收藏相关
+  editLike:params=>{
+    return apppost('/like/edit',params);
+  },
+  getLikeList:params=>{
+    return apppost('/like/list',params);
+  },
+  //号源相关
+  getSourceList:params=>{
+    return apppost('/source/list',params);
+  },
+  getSourceDetail:params=>{
+    return apppost('/source/detail',params);
+  },
+  //订单
+  editOrder:params=>{
+    return apppost('/order/edit',params);
   }
 }
 

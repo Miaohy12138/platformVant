@@ -1,10 +1,10 @@
 <template>
   <div class="register">
     <div class="register-1">
-      <img
-        src="https://accountstatic.vivo.com.cn/accountstatic.vivo.com.cn/static/img/logo.3c33210.png.webp"
-        alt
-      >
+<!--      <img-->
+<!--        src="https://accountstatic.vivo.com.cn/accountstatic.vivo.com.cn/static/img/logo.3c33210.png.webp"-->
+<!--        alt-->
+<!--      >-->
       <p>账号注册</p>
     </div>
     <div class="register-2">

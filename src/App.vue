@@ -7,7 +7,8 @@
 <script>
   import { setCookie,getCookie,delCookie } from './assets/js/cookie.js'
   import rem from './rem/rem.js'
-  import styles from './assets/css/hospital.css'
+  // import styles from './assets/css/hospital.css'
+  // import style from './assets/css/doctor.css'
   export default {
     name: 'app',
     data(){
@@ -27,6 +28,12 @@
 </script>
 
 <style>
+  @import "assets/css/doctor.css";
+  @import "assets/css/hospital.css";
+  @import "assets/css/guahao.css";
+  @import "assets/css/person.css";
+  @import "assets/css/order.css";
+
   @import 'styles/style.css';
   @import './fon/iconfont.css';
   body{

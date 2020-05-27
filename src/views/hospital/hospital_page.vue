@@ -6,7 +6,12 @@
               left-text="返回"
               left-arrow
               @click-left="back"
-      />
+              @click-right="gohome"
+      >
+        <template #right>
+          <van-icon name="home-o" size="20" />
+        </template>
+      </van-nav-bar>
       <section class="hospital-summary-introduce">
         <div class="info">
           <div class="left">
@@ -118,8 +123,10 @@
       goDepartmentList(){
         let hospitalId = this.$route.params.id;
         this.$router.push("/department_list/"+hospitalId+"/"+this.departmentIds).catch(err=>{
-
         })
+      },
+      gohome(){
+        this.$router.push("/home")
       }
     }
   }

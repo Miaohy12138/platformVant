@@ -1,5 +1,14 @@
 <template>
   <div class="main">
+    <div class="header">
+      <van-nav-bar
+              title="标题"
+              left-text="返回"
+              left-arrow
+              @click-left="onClickLeft"
+      />
+    </div>
+  <div class="container">
     <van-tree-select
             :items="items"
             :active-id.sync="activeId"
@@ -7,6 +16,8 @@
             height="20rem"
             @click-item="goDetail"
     />
+  </div>
+
   </div>
 </template>
 
@@ -79,6 +90,9 @@
         this.$router.push("/department_doctor/"+hospitalId+"/"+departmentId).catch(err=>{
 
         })
+      },
+      onClickLeft(){
+        this.$router.back(-1);
       }
     }
   }
@@ -93,5 +107,8 @@
 
   .van-tree-select__item--active {
     color: blue;
+  }
+  .container{
+    padding-top: 1.35rem;
   }
 </style>

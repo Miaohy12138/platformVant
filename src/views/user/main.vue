@@ -32,7 +32,7 @@
         <van-grid-item icon="photo-o" text="积分" />
       </van-grid>
       <div class="container-con">
-        <router-link class="container-order" to="/order" tag="div">
+        <router-link class="container-order" to="/order_list" tag="div">
           <van-cell title="我的挂号单" icon="like-o" is-link size="large"/>
           <div class="container-order-2">
             <p class v-for="list in container">

@@ -1,277 +1,169 @@
 <template>
-  <div >
-    <Collection-Header title="我的收藏"></Collection-Header>
-    <div class="box">
-        <div class="shop_1">
-            <p v-for="(list,index) in item" class="list"  :key="index" @click="btn(index)">
-                <span :class="{active:index==collectionIndex}">{{list.name}}</span>
-            </p>
-        </div>
+  <div>
+    <Address-Header title="我的收藏"></Address-Header>
+    <div class="main-xs">
+      <van-tabs v-model="active" @click="getList">
+        <van-tab title="医院" >
+          <div class="doctor-list">
+            <div class="we-list dep-doctor--list">
+                <van-list v-for=" (item,index) in list">
+                  <van-swipe-cell>
+                    <div class="dep-doctor--item">
+                      <a >
+                        <div class="img">
+                          <img onerror="this.src='https://static.guahao.cn/img/character/doc-unknow.png'"
+                               src="https://kano.guahao.cn/pYf27810846_image140">
+                        </div>
+                        <dl>
+                          <dt>
+                            <strong>{{item.name}}</strong>
+                            <span><hospital_level :level="item.level"></hospital_level></span>
+                          </dt>
+                          <dd>
+                        <span class="score">
+                          <em>9.</em>
+                          3
+                        </span>
+                            接诊量：401
+                          </dd>
+                          <dd>擅长：{{item.goodDisease}}</dd>
+                        </dl>
+                      </a>
+                    </div>
+                    <template #right>
+                      <van-button square text="删除" type="danger" class="delete-button" @click="delLike(item.id,index)"/>
+                    </template>
+                  </van-swipe-cell>
+                </van-list>
+            </div>
+          </div>
+        </van-tab>
+        <van-tab title="医生" >
+          <div class="doctor-list">
+            <div class="we-list dep-doctor--list">
+              <van-list v-for=" (item,index) in list">
+                <van-swipe-cell>
+                  <div class="dep-doctor--item">
+                    <a >
+                      <div class="img">
+                        <img onerror="this.src='https://static.guahao.cn/img/character/doc-unknow.png'"
+                             src="https://kano.guahao.cn/pYf27810846_image140">
+                      </div>
+                      <dl>
+                        <dt>
+                          <strong>{{item.name}}</strong>
+                          <span><doctor_level :level="item.level"></doctor_level></span>
+                        </dt>
+                        <dd>
+                        <span class="score">
+                          <em>9.</em>
+                          3
+                        </span>
+                          接诊量：401
+                        </dd>
+                        <dd>擅长：{{item.goodDisease}}</dd>
+                      </dl>
+                    </a>
+                  </div>
+                  <template #right>
+                    <van-button square text="删除" type="danger" class="delete-button" @click="delLike(item.id,index)"/>
+                  </template>
+                </van-swipe-cell>
+              </van-list>
+            </div>
+          </div>
+        </van-tab>
+      </van-tabs>
 
-
-
-        <div v-show="collectionIndex===1" v-for="(list,index) in wz" :key="index">
-           <div class="article" @click="goDetalis(list.sc_id)">
-                <p class="tltie">{{list.title}}</p>
-                <p class="con">{{list.abstract}}</p>
-                <p class="time">发布时间：{{list.time}}</p>
-                <i @click.stop='del_sc(list)' class="iconfont icon-huishouzhan7"></i>
-           </div>
-        </div>
     </div>
   </div>
+
 </template>
 
+
 <script>
-import CollectionHeader from "../../common/header";
-import { mapState, mapMutations, mapGetters } from "vuex";
-import { Toast,MessageBox } from "mint-ui";
-import { setCookie, getCookie } from "../../../assets/js/cookie.js";
-import { sc_biao ,del_sc_biao} from "../../../assets/js/api.js";
-import axios from "axios";
-export default {
-  name: "MyCollection",
-  data() {
-    return {
-      collectionIndex: 0,
-      item: [
-        {
-          name: "医生"
-        },
-        {
-          name: "医院"
-        }
-      ],
-      wz:[]
-    };
-  },
-  computed: {
 
-    // collections() {
-    //   return this.$store.state.collections;
-    // },
-    // article() {
-    //   return this.$store.state.article;
-    // },
-    // ...mapGetters(
-    //   ["this.$store.state.collections"],
-    //   ["this.$store.state.article"]
-    // )
-  },
-  components: {
-    CollectionHeader
-  },
-
-   methods: {
-      async get_wz(){
-        let cookier_token = getCookie("token");
-        axios({
-          url: sc_biao,
-          method: "post",
-          params: {
-            token:cookier_token
-          }
-        })
-          .then(res => {
-              this.wz=res.data.data
-          })
-          .catch(err => {
-            //异常操作
-          });
-      },
-      del_sc(list){
-        MessageBox.confirm('确定取消收藏该文章么？').then(action=>{
-            let cookier_token = getCookie("token");
-            axios({
-            url: del_sc_biao,
-            method: "get",
-            params: {
-                id:list.id,
-                token:cookier_token
-            }
-            })
-            .then(res => {
-                this.get_wz()
-            })
-            .catch(err => {
-                //异常操作
-            });
-            // localStorage.setItem("article",JSON.stringify(state.article));
-        })
-
-      },
-    btn(index) {
-      this.collectionIndex = index;
+  import AddressHeader from "../../common/header";
+  import API from "../../../assets/js/api"
+  import doctor_level from "../../common/doctor_level";
+  import hospital_level from "../../common/hospital_level";
+  export default {
+    data() {
+      return {
+        list:[],
+        pageIdx:0,
+        pageSize:10,
+        totalCount:0,
+        active:0
+      };
     },
-    goDetalis(id) {
-      this.$router.push({
-        path: "/newsView",
-        query: {
-          id: id
-        }
-      });
-    }
-  },
-   created(){
-      this.get_wz()
-  },
-
-
-};
+    components: {
+      AddressHeader,
+      doctor_level,
+      hospital_level
+    },
+    mounted(){
+      this.getList();
+    },
+    methods: {
+      getList(){
+        let pdata = {
+          targetType:this.active+1,
+          pageIdx:this.pageIdx,
+          pageSize:this.pageSize
+        };
+        API.getLikeList(pdata).then(res=>{
+          console.log(res.data.data);
+          this.list = res.data.data.likeList;
+          this.totalCount = res.data.data.totalCount;
+        })
+      },
+      delLike(id,index){
+        let pdata = {
+          actionType :2,
+          id:id
+        };
+        API.editLike(pdata).then(res=>{
+          this.getList()
+        })
+      }
+    },
+  };
 </script>
 
+
 <style lang="stylus" scoped>
-.box {
-    padding-top: 1.45rem;
-}
-
-.active {
-    color: #199cfe;
-    border-bottom: 2px solid #199cfe;
-}
-
-.list {
-    width: 50%;
-    height: 1rem;
-    line-height: 1rem;
-    float: left;
-    text-align: center;
-
-    span {
-        width: 25%;
-        height: 100%;
-        font-size: 0.38rem;
-        display: block;
-        margin: auto;
-    }
-}
-
-.shop_1 {
+  .active {
+  }
+  .main-xs {
+    padding-top 1.45rem
     width: 100%;
-    height: 1rem;
-    background: #ffffff;
-    margin-bottom: 1px;
-}
-
-.shop_2 {
-    width: 100%;
-    height: 4rem;
-    margin-bottom: 0.18rem;
-
-    .shop-1 {
-        width: 100%;
-        height: 1.3rem;
-        background: #ffffff;
-        border-bottom: 1px solid #eee;
-
-        .left {
-            float: left;
-            margin-left: 0.5rem;
-            line-height: 1.3rem;
-            font-size: 0.35rem;
-            color: #17af58;
-        }
-
-        .right {
-            float: right;
-            margin-right: 0.35rem;
-            line-height: 1.3rem;
-            font-size: 0.35rem;
-            color: #666;
-        }
-    }
-
-    .shop-2 {
-        width: 100%;
-        height: 2.7rem;
-        background: #ffffff;
-
-        .img {
-            width: 30%;
-            height: 100%;
-            float: left;
-
-            img {
-                display: block;
-                width: 2.4rem;
-                margin: 0.1rem 0.3rem;
-            }
-        }
-
-        .text {
-            width: 40%;
-            height: 100%;
-            float: left;
-            display: flex;
-            flex-direction: column;
-
-            .name {
-                font-size: 0.4rem;
-                margin: 0.2rem 0.3rem;
-            }
-
-            .price {
-                color: red;
-                font-weight: 500;
-                font-size: 0.4rem;
-                margin: 0.1rem 0.3rem;
-            }
-        }
-
-        .go {
-            width: 30%;
-            height: 100%;
-            float: left;
-            position: relative;
-
-            span {
-                display: block;
-                width: 90%;
-                height: 0.8rem;
-                line-height: 0.8rem;
-                background: red;
-                text-align: center;
-                color: #ffffff;
-                border-radius: 30px;
-                position: absolute;
-                bottom: 0.4rem;
-                font-size: 0.3rem;
-            }
-        }
-    }
-}
-
-.article {
-    width: 100%;
-    height: 3.1rem;
-    background: #ffffff;
-    border-bottom: 1px solid #eee;
-    text-align: justify;
-    font-size .34rem
-    i {
-        float: right;
-        margin: 0.2rem 0.45rem;
-        font-size: 0.49rem;
-    }
-
-    p {
-        width: 90%;
-        margin: auto;
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 2;
-        overflow: hidden;
-    }
-
-    .time {
-        width: 51%;
-        margin: 0.2rem 0.55rem;
-        float: left;
-    }
-
-    .tltie {
-        font-size: 0.48rem;
-        padding-top: 0.38rem;
-    }
-}
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    background: #f4f4f4;
+    background-color white
+  }
+  .Address-box{
+    z-index 1
+    background-color white
+  }
+  .visit-item{
+    height 2rem
+    font-size 0.38rem
+  }
+  .defaulttag{
+    margin-left 0.2rem
+  }
+  .van-button::before{
+    height: 100%;
+  }
+  .van-tabs__line{
+    background-color:blue;
+  }
+  .delete-button {
+    height: 100%;
+  }
 </style>

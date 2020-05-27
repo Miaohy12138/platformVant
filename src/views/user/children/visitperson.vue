@@ -16,27 +16,35 @@
                 @load="onLoadList"
                 :offset="offset"
         >
-          <van-cell v-for="(item,index) in list" class="visit-item">
-            <van-swipe-cell  >
-              <van-row>
-                <van-col span="16" style="margin-top: 0.1rem">
-                  <van-icon name="friends-o" />
-                  <span>  姓名：{{item.name}}</span>
-                  <van-tag class ="defaulttag" round type="primary" v-show="item.isDefault==1">默认就诊人</van-tag>
-                  <br>
-                  <van-icon name="phone-o" />
-                  <span>手机号：{{item.mobile}}</span>
-                </van-col>
-                <van-col span="8">
-                </van-col>
-              </van-row>
+            <van-swipe-cell v-for="(item,index) in list">
+              <template #left>
+                <van-button square type="info" text="选择" @click="select(item.id,item.name)"/>
+              </template>
+                <van-cell>
+
+                  <label class="we-radio--item">
+                    <div class="booking-patient-list--patient">
+                      <p class="booking-patient-list--patient-meta">
+                        <span class="booking-patient-list--patient-name">{{item.name}}</span>
+                        <span v-show="item.sex ===1">男</span>
+                        <span v-show="item.sex ===0">女</span>
+                        <span>{{item.age}}岁</span>
+                        <van-tag class ="defaulttag" round type="primary" v-show="item.isDefault==1">默认就诊人</van-tag>
+                        <!---->
+                      </p>
+                      <p>
+                        <span>身份证</span>{{item.idCard}}</p>
+                      <p>
+                      <span>手机号码</span>{{item.mobile}}</p>
+                    </div>
+                  </label>
+                </van-cell>
               <template #right>
                 <van-button square type="primary" text="编辑"@click="editItem(item.id,index)"/>
                 <van-button square type="danger" text="删除" @click="deleteItem(item.id,index)"  />
               </template>
             </van-swipe-cell>
 
-          </van-cell>
 <!--          <van-panel :desc="'手机号:'+item.mobile"  v-for="item in list" :key="item.id" :title="item.name">-->
 <!--          </van-panel>-->
         </van-list>
@@ -52,9 +60,7 @@
 <script>
 
 import AddressHeader from "../../common/header";
-import { setCookie, getCookie } from "../../../assets/js/cookie.js";
 import API from "../../../assets/js/api"
-import success from "../../common/success";
 import { Dialog } from 'vant';
 export default {
   data() {
@@ -68,6 +74,7 @@ export default {
       pageIdx:0,
       pageSize:10,
       timeout:300,
+      canClick:false
     };
   },
   components: {
@@ -76,6 +83,11 @@ export default {
   created() {
   },
   methods: {
+    select(id,name){
+      sessionStorage.setItem('visitpersonId',id);
+      sessionStorage.setItem('visitpersonName',name);
+      this.$router.back(-1);
+    },
     goAdd_address() {
       this.$router.push({
         path: "add_visitperson"
@@ -84,7 +96,7 @@ export default {
     getList(){
       let params = {
         pageIdx:this.pageIdx,
-        pageSize:this.pageSize
+        pageSize:this.pageSize,
       };
       this.successList(params);
     },
@@ -151,22 +163,22 @@ export default {
 
 
 <style lang="stylus" scoped>
-.active {
-}
-.main-xs {
-  padding-top 1.45rem
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  left: 0;
-  top: 0;
-  z-index: 2;
-  background: #f4f4f4;
-}
-.Address-box{
-  z-index 1
-  background-color white
-}
+  .active {
+  }
+  .main-xs {
+    padding-top 1.45rem
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    background: #f4f4f4;
+  }
+  .Address-box{
+    z-index 1
+    background-color white
+  }
   .visit-item{
     height 2rem
     font-size 0.38rem
@@ -174,7 +186,7 @@ export default {
   .defaulttag{
     margin-left 0.2rem
   }
-  .van-button::before{
+  .van-button{
     height: 100%;
   }
 </style>

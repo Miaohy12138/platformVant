@@ -48,9 +48,22 @@ import hospital_home from "../views/hospital/hospital_home"
 import hospital_page from "../views/hospital/hospital_page"
 //医生
 import doctor_list from "../views/search/doctor_list";
+import doctor_page from "../views/doctor/doctor_page";
+import doctor_home from "../views/doctor/doctor_home";
+import doctor_guahao from "../views/doctor/doctor_guahao"
 //科室
 import department_doctor from "../views/department/department_doctor";
 import department_list from "../views/department/department_list"
+//挂号
+import guahao_page from "../views/guahao/guahao_page";
+
+//支付
+import pay_home from "../views/pay/pay_home";
+import pay_result from "../views/pay/pay_result";
+
+//订单
+import order_list from "../views/order/order_list";
+import order_edit from "../views/order/order_edit";
 //test
 import contact from "../views/user/children/contact";
 import main2 from "../views/user/main2";
@@ -96,7 +109,16 @@ const routes = [
   {path:'/hospital_home/:id',name:'hospital_home',component:hospital_home},
   {path:'/hospital_page/:id/:departmentIds',name:'hospital_page',component:hospital_page},
   {path:'/department_list/:id/:departmentIds',name:'department_list',component:department_list},
-  {path:'/department_doctor/:hospitalId/:departmentId/',name:'department_doctor',component:department_doctor}
+  {path:'/department_doctor/:hospitalId/:departmentId/',name:'department_doctor',component:department_doctor},
+  {path:'/doctor_page/:id',name:'doctor_page',component:doctor_page},
+  {path:'/doctor_home/:id',name:'doctor_home',component:doctor_home},
+  {path:'/doctor_guahao/:id',name:'doctor_guahao',component:doctor_guahao},
+  {path:'/guahao_page/:id/:doctorId',name:'guahao_page',component:guahao_page,},
+  {path: '/visitpersoni/:id', name: 'visitpersoni', component: visitperson},
+  {path: '/pay_home', name: 'pay_home', component: pay_home},
+  {path: '/pay_result', name: 'pay_result', component: pay_result},
+  {path: '/order_list',name:'order_list',component:order_list},
+  {path: '/order_edit',name:'order_edit',component:order_edit}
 ];
 
 const router = new VueRouter({

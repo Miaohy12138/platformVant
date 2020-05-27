@@ -426,10 +426,10 @@
 
 .hospital-index-introduce--collect {
     position: absolute;
-    top: .256rem;
-    left: .256rem;
-    width: 0.824rem;
-    height: 0.824rem;
+    top: .18rem;
+    left: .28rem;
+    width: 0.724rem;
+    height: 0.724rem;
     background: url(https://static.guahao.cn/front/portal-h5-node/follow.748a3eabf8f609198820094ad0d8a8aa.png) no-repeat;
     background-size: 100% 100%
 }

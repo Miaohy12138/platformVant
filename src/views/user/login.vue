@@ -1,10 +1,10 @@
 <template>
   <div class="register">
     <div class="register-1">
-      <img
-        src="https://accountstatic.vivo.com.cn/accountstatic.vivo.com.cn/static/img/logo.3c33210.png.webp"
-        alt
-      >
+<!--      <img-->
+<!--        src="https://accountstatic.vivo.com.cn/accountstatic.vivo.com.cn/static/img/logo.3c33210.png.webp"-->
+<!--        alt-->
+<!--      >-->
       <p>账号登陆</p>
     </div>
     <div class="register-2">
@@ -32,6 +32,7 @@ import { setCookie, getCookie } from "../../assets/js/cookie.js";
 import { Toast } from "mint-ui";
 import  API  from "../../assets/js/api";
 import {Notify} from "vant";
+import store from "../../store/index"
 export default {
   data() {
     return {
@@ -65,6 +66,7 @@ export default {
               _this.$router.push("main");
               setCookie("username", _this.name);
               setCookie("token", res.data.data.token);
+              sessionStorage.setItem("userId",res.data.data.userId)
             } else if (res.data.code == 4000) {
               Notify({
                   message: res.data.data,

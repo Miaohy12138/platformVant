@@ -18,7 +18,7 @@
       </div>
       <div class="hospital-index-introduce--middle">
         <img :src="hospital.coverUrl" class="x-img-fadein">
-        <div class="hospital-index-introduce--collect"></div>
+        <div class="hospital-index-introduce--collect" @click="like"></div>
         <div class="hospital-index-introduce--detail">
           <span class="hospital-index-introduce--level"><hospital_level :level="hospital.level"></hospital_level></span>
           <label>综合医院 </label>
@@ -62,6 +62,7 @@
 
   import hospital_level from "../common/hospital_level";
 import API from "../../assets/js/api"
+  import { Toast } from 'vant';
   export default {
     name: "hospital_home",
     data(){
@@ -109,6 +110,20 @@ import API from "../../assets/js/api"
           let departments = res.data.data.departments;
           console.log(departments);
         })
+      },
+      like(){
+        let id = this.$route.params.id;
+        let pdata = {
+          actionType:1,
+          targetId:id,
+          targetType:1
+        };
+        API.editLike(pdata).then(res=>{
+          if(res.data.code==0){
+            Toast.success({message:'收藏成功',duration:500});
+          }
+        })
+
       }
     },
 
