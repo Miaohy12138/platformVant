@@ -360,8 +360,8 @@
 }
 
 .expertpage--avatar .avatar {
-    width: 2.028rem;
-    height: 2.028rem;
+    width: 2.828rem;
+    height: 2.828rem;
     border: .08533333rem solid #fff;
     border-radius: 50%
 }
@@ -4562,7 +4562,7 @@ body {
 
 .p-expert-book--intro dl {
     position: absolute;
-    top: 1.62133333rem;
+    top: 1.12133333rem;
     left: 2.52666667rem;
     color: #fff
 }

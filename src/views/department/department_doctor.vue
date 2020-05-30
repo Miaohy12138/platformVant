@@ -13,8 +13,8 @@
       <div class="dep-doctor--item" @click="goDoctorHome(item.id)" v-for="item in doctors">
         <a >
           <div class="img">
-            <img onerror="this.src='https://static.guahao.cn/img/character/doc-unknow.png'"
-                 src="https://kano.guahao.cn/pYf27810846_image140">
+            <img
+                 :src="item.imageUrl">
           </div>
           <dl>
             <dt>

@@ -21,6 +21,9 @@
     <div class="register-3">
       <input type="button" class="btn" @click="btn" value="注册">
     </div>
+    <div class="register-3">
+      <input type="button" class="btn" @click="back" value="返回登录">
+    </div>
   </div>
 </template>
 
@@ -28,6 +31,7 @@
 import { setCookie, getCookie } from "../../assets/js/cookie.js";
 import { Toast } from "mint-ui";
 import API from "../../assets/js/api"
+import {Notify} from "vant";
 export default {
   data() {
     return {
@@ -36,16 +40,19 @@ export default {
     };
   },
   mounted() {
-    if (getCookie("name")) {
-      this.$router.push("/login");
-    }
+    // if (getCookie("name")) {
+    //   this.$router.push("/login");
+    // }
   },
   methods: {
+    back(){
+      this.$router.back(-1);
+    },
     btn() {
       var _this = this;
       if(_this.name.length<=4){
            Toast({
-              message: "注册的用户名低于四位！",
+              message: "注册的用户名低于六位！",
               duration: 950
             });
           return false;
@@ -71,20 +78,42 @@ export default {
         };
         API.register(pdata)
           .then(res=> {
-            console.log(res)
             if (res.data.code == 1) {
                Toast({
                 message: res.data.msg,
                 duration: 950
-            });
+                });
             } else if (res.data.code == 0) {
-              Toast({
-                message: res.data.msg,
-                duration: 950
+              // Toast({
+              //   message: res.data.msg,
+              //   duration: 950
+              // });
+              let pdata2 = {
+                  name: _this.name,
+                  password: _this.password,
+              };
+              API.login(pdata2)
+                .then(function(res) {
+                  console.log(res);
+                  //成功
+                  if (res.data.code == 0) {
+                    _this.$router.push("main");
+                    setCookie("username", _this.name);
+                    setCookie("token", res.data.data.token);
+                    sessionStorage.setItem("userId",res.data.data.userId)
+                  } else if (res.data.code == 4000) {
+                    Notify({
+                        message: res.data.data,
+                        duration:1000,
+                      }
+                    );
+                  }
+                }).catch(err=>{
+                console.log(err);
               });
-              _this.$router.push("main");
-              setCookie("username", _this.name);
-              setCookie("token", res.data.data.token);
+              // _this.$router.push("main");
+              // setCookie("username", _this.name);
+              // setCookie("token", res.data.data.token);
             }
           })
           .catch(err =>{

@@ -64,6 +64,10 @@ import pay_result from "../views/pay/pay_result";
 //订单
 import order_list from "../views/order/order_list";
 import order_edit from "../views/order/order_edit";
+import order_page from "../views/order/order_page";
+
+//评分
+import add_comment from "../views/comment/add_comment";
 //test
 import contact from "../views/user/children/contact";
 import main2 from "../views/user/main2";
@@ -118,7 +122,9 @@ const routes = [
   {path: '/pay_home', name: 'pay_home', component: pay_home},
   {path: '/pay_result', name: 'pay_result', component: pay_result},
   {path: '/order_list',name:'order_list',component:order_list},
-  {path: '/order_edit',name:'order_edit',component:order_edit}
+  {path: '/order_edit',name:'order_edit',component:order_edit},
+  {path: '/order_page/:id',name:'order_page',component:order_page},
+  {path: '/add_comment/:id',name:'add_comment',component:add_comment},
 ];
 
 const router = new VueRouter({

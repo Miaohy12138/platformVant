@@ -1,7 +1,22 @@
 <template>
-  <div>
-    success
-    三秒后返回主页
+  <div class="main" >
+    <van-nav-bar
+            title="支付成功"
+    />
+    <div class="as">
+      <span >
+      三秒后返回主页
+    </span>
+
+    </div>
+    <van-count-down :time="time" format=" ss 秒" @finish="goMain()"/>
+    <div class="mss">
+      <img src="/img/success.png" alt="" >
+    </div>
+
+
+
+
   </div>
 </template>
 
@@ -11,7 +26,8 @@
     name: "pay_result",
     data(){
       return {
-        id:0
+        id:0,
+        time:3* 1000
       }
     },
     created() {
@@ -22,7 +38,7 @@
     },
     methods:{
       goMain(){
-
+        this.$router.push("/main")
       },
       updateOrder(){
         let pdata = {
@@ -35,9 +51,9 @@
         };
         let _this = this;
         API.editOrder(pdata).then(res=>{
-          setTimeout(function(){
-            _this.$router.push("/main")
-          }, 3000);
+          // setTimeout(function(){
+          //   _this.$router.push("/main")
+          // }, 3000);
 
         })
       }
@@ -46,5 +62,16 @@
 </script>
 
 <style scoped>
-
+.main{
+  background-color: white;
+  min-height: auto;
+  text-align: center;
+}
+  .as{
+    margin-top: 2rem;
+  }
+  .mss{
+    padding-top: 2rem;
+    padding-bottom: 6rem;
+  }
 </style>

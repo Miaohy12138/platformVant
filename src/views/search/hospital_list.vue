@@ -7,21 +7,37 @@
       </van-dropdown-menu>
     </div>
     <div class="list-main">
-      <van-cell v-for="item in list" :key="item.id" @click="goDetail(item.id)">
-        <van-row>
-          <van-col span="6"><van-image  width="100" height="65" :src="item.coverUrl"></van-image></van-col>
-          <van-col span="10" offset="4">
-            <div class="item-right">
-              <div class="item-right-up">
+      <div data-v-f9730fec="" class="component-hospital-card" v-for="item in list" @click="goDetail(item.id)">
+        <div class="g-card">
+          <div class="g-card--avatar" style="width: 3.072rem; height: 2.304rem;"><span
+                  class="g-card--avatar-img"><img :src="item.coverUrl"
+                                                  class="x-img-fadein" normal="loaded"></span></div>
+          <div class="content">
+            <div class="g-card-row" style="margin-bottom: 8px;">
+              <div class="g-card-col text ellipsis"
+                   style="color: rgb(40, 53, 76); font-size: 14px; margin-right: 4px; -webkit-line-clamp: 2; font-weight: bold;">
                 {{item.name}}
               </div>
-              <div class="item-right-down">
-                {{item.introduction}}
+            </div>
+            <div class="g-card-row" style="justify-content: space-between; margin-bottom: 7px;">
+              <div class="g-card-row--merge-col">
+                <div class="g-card-col text"
+                     style="color: rgb(43, 49, 61); font-size: 12px; margin-right: 12px;"><hospital_level :level="item.level"/>
+                </div>
               </div>
             </div>
-          </van-col>
-        </van-row>
-      </van-cell>
+            <div class="g-card-row component-accurate-hospital-card--count"
+                 style="justify-content: space-between; margin-bottom: 7px;">
+              <div class="g-card-row--merge-col">
+                <div class="g-card-col text ellipsis"
+                     style="color: rgb(157, 158, 167); font-size: 12px; margin-right: 4px;">
+                  {{item.address}}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
    <div class="page">
      <van-pagination v-model="pageIdx" :total-items="totalCount" :items-per-page="pageSize" mode="simple" @change="change" />
@@ -31,8 +47,12 @@
 
 <script>
   import API from "../../assets/js/api"
+  import hospital_level from "../common/hospital_level";
   export default {
     name: "hospitalList",
+    components:{
+      hospital_level
+    },
     data(){
       return {
         searchValue:"",
@@ -50,7 +70,7 @@
         option2: [
           { text: '默认排序', value: 0 },
           { text: '好评排序', value: 1 },
-          { text: '销量排序', value: 2 },
+          { text: '预约数量', value: 2 },
         ],
         list:[],
       }

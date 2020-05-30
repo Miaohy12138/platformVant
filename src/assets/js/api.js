@@ -118,6 +118,9 @@ export default {
   getDoctorDetail:params=>{
     return apppost('/doctor/detail',params);
   },
+  doctorListByName:params=>{
+    return apppost('/doctor/listByName',params);
+  },
   //科室相关
   getDepartmentByIds:params=>{
     return apppost('/department/getByIds',params);
@@ -139,9 +142,39 @@ export default {
   getSourceDetail:params=>{
     return apppost('/source/detail',params);
   },
+  hasSource:params=>{
+    return apppost('/source/hasSource',params);
+  },
   //订单
   editOrder:params=>{
     return apppost('/order/edit',params);
+  },
+  getOrderList:params=>{
+    return apppost('/order/list',params);
+  },
+  orderDetail:params=>{
+    return apppost('order/detail',params);
+  },
+  //评价相关
+  editComment:params=>{
+    return apppost('/comment/edit',params);
+  },
+  listComment:params=>{
+    return apppost('/comment/list',params);
+  },
+  getCount:params=>{
+    return apppost("/comment/getCount",params);
+  },
+  getRate:params=>{
+    return apppost("/comment/getRate",params);
+  },
+  //推荐相关
+  recommend:params=>{
+    return  apppost('/recommend/list',params);
+  },
+  //支付
+  pay:params=>{
+    return apppost("/pay/pay",params);
   }
 }
 

@@ -49,15 +49,8 @@
         <router-link :to="{name:'visitperson'}" class="con">
           <van-cell title="就诊人管理" icon="friends-o" is-link size="large"/>
         </router-link>
-
-        <router-link :to="{name:'cart'}" class="con">
-          <van-cell title="我的购物车" icon="shopping-cart-o" is-link size="large"/>
-        </router-link>
       </div>
-
     </div>
-
-
     <div>
       <router-view></router-view>
     </div>

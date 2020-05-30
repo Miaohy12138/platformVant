@@ -33,6 +33,7 @@
   @import "assets/css/guahao.css";
   @import "assets/css/person.css";
   @import "assets/css/order.css";
+  @import "assets/css/search.css";
 
   @import 'styles/style.css';
   @import './fon/iconfont.css';

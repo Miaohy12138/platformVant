@@ -7,9 +7,11 @@
     />
     <section>
       <div class="booking-reservation--doctor">
-        <div class="expertpage--avatar"><img
-                src="https://kano.guahao.cn/r4o2590723_image140.jpg?resize=140x140&amp;webp=80"
-                class="avatar x-img-fadein" alt="朱兰香" title="朱兰香" normal="loaded"><!----></div>
+        <div class="expertpage--avatar">
+          <img
+                :src="imageurl"
+                class="avatar x-img-fadein" :alt="sourceItem.doctorName" :title="sourceItem.doctorName" normal="loaded"><!---->
+        </div>
         <span class="booking-reservation--doctor-name">{{sourceItem.doctorName}}</span>医生
       </div>
       <section class="booking-reservation--basic-info">
@@ -84,7 +86,7 @@
           <div class="">
             <div class="we-collapse--title-wrap we-collapse--active">
               <div class="we-collapse--title"><i class="we-collapse--title-pre"></i>
-                <p class="we-collapse--title-text"><span>挂号费由医院自行设定，平台不收取任何额外费用。</span><br>我已了解并同意以下规则（点击查看详情）</p><i
+                <p class="we-collapse--title-text"><span>挂号费由医院自行设定，平台不收取任何额外费用。</span><br>我已了解并同意</p><i
                         class="we-icon-more we-collapse--expanded"></i></div>
             </div>
             <div class="we-collapse--wrapper" style="display: none; top: 61.4px; height: 0px;">
@@ -142,6 +144,7 @@
     name: "guahao_page",
     data(){
       return {
+        imageurl:'',
         visitpersonId:0,
         visitpersonName:'',
         sourceItem:{},
@@ -163,6 +166,9 @@
         ]
       }
     },
+    computed:{
+
+    },
     created() {
       let sid = this.$route.params.id;
       let doctorId = this.$route.params.doctorId;
@@ -175,8 +181,18 @@
       });
       this.visitpersonId = sessionStorage.getItem('visitpersonId');
       this.visitpersonName = sessionStorage.getItem('visitpersonName');
+
+      this.imageUrl(doctorId);
     },
     methods:{
+      imageUrl(id){
+        let pdada = {
+          id:id
+        };
+        API.getDoctorDetail(pdada).then(res=>{
+          this.imageurl =  res.data.data.doctor.imageUrl;
+        })
+      },
       submit(){
         let pdata = {
           order:{
@@ -185,11 +201,11 @@
             isPay:0,
             isFirst:this.isFirst,
             cardId:this.cardId,
+            visitId:this.visitpersonId
           },
           actionType:1
         };
         API.editOrder(pdata).then(res=>{
-          console.log(res);
           sessionStorage.setItem("payFormStr",res.data.data);
           let code = res.data.code;
           if(code===0){

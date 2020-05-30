@@ -41,9 +41,9 @@ export default {
     };
   },
   mounted() {
-    if (getCookie("name")) {
-      this.$router.push("/register");
-    }
+    // if (getCookie("name")) {
+    //   this.$router.push("/register");
+    // }
   },
   methods: {
     btn() {

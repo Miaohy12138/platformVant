@@ -28,11 +28,11 @@
               </van-radio-group>
             </template>
           </van-field>
-          <van-field name="uploader" label="头像上传" >
-            <template #input>
-              <van-uploader v-model="uploader"  multiple :max-count="1"/>
-            </template>
-          </van-field>
+<!--          <van-field name="uploader" label="头像上传" >-->
+<!--            <template #input>-->
+<!--              <van-uploader v-model="uploader"  multiple :max-count="1"/>-->
+<!--            </template>-->
+<!--          </van-field>-->
 
           <div style="margin: 16px;">
             <van-button round block type="info" native-type="submit">
